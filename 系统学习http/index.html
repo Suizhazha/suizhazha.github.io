@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E6%B5%85%E6%9E%90url/" />
+  <link rel="next" href="http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" />
+  <link rel="canonical" href="http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           系统学习HTTP | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="系统学习HTTP | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "系统学习HTTP",
+    "headline" : "系统学习HTTP",
+    "description" : "体系化学习  基础概念（必会的） 如何调试（用的是 node.js，可以用 log\/debugger） 查资料（node.js 文档） 标准制定者（HTTP 规格文档：RFC 2612 等） CRM 学习法（copy，run，modify）  HTTP 基础概念  请求  请求动词 路径\/查询参数 协议名\/版本 \/\/以上是请求行 Host：域名或者IP Accept： 接收内容 Content-type：请求体的格式 \/\/以上为请求头 \/\/请求头和请求体中间要加一个回车 请求体（上传的内容） 例如：\nNotes：\n 请求格式主要分为：请求行，请求头，请求体。 请求动词有：GET（获取）\/POST（上传）\/PUT\/PATCH\/DELETE 等。 请求体在 GET 请求中一般为空。 具体文档RFC 2612 第五章 大小写随意。   响应  协议名\/版本 状态码（默认200） 状态字符串 \/\/以上为状态行 Content-Type：响应体格式（其他一般不用管） \/\/以上为响应头 \/\/响应头和响应体体中间要加一个回车 响应体（即下载内容） 例如：\nNotes：\n 响应格式分为状态行，响应头，响应体。 常见的状态码是考点。 文档在RFC 2612 第六章  ",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-24 21:28:20 \x2b0800 CST",
+    "dateModified" : "2020-01-24 21:28:20 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http\/",
+    "wordCount" : "55",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">系统学习HTTP</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-24 itemprop="datePublished">January 24, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="体系化学习">体系化学习</h3>
+<ol>
+<li>基础概念（必会的）</li>
+<li>如何调试（用的是 node.js，可以用 log/debugger）</li>
+<li>查资料（node.js 文档）</li>
+<li>标准制定者（HTTP 规格文档：RFC 2612 等）</li>
+<li>CRM 学习法（copy，run，modify）</li>
+</ol>
+<h2 id="http-基础概念">HTTP 基础概念</h2>
+<ul>
+<li>请求</li>
+</ul>
+<pre><code>请求动词 路径/查询参数 协议名/版本
+//以上是请求行
+Host：域名或者IP
+Accept： 接收内容
+Content-type：请求体的格式
+//以上为请求头
+
+//请求头和请求体中间要加一个回车
+请求体（上传的内容）
+
+</code></pre><p>例如：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/22/16fcdb66f6ea2883?w=338&amp;h=381&amp;f=png&amp;s=50536" alt=""></p>
+<p>Notes：</p>
+<ol>
+<li>请求格式主要分为：请求行，请求头，请求体。</li>
+<li>请求动词有：GET（获取）/POST（上传）/PUT/PATCH/DELETE 等。</li>
+<li>请求体在 GET 请求中一般为空。</li>
+<li>具体文档<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html">RFC 2612 第五章</a></li>
+<li>大小写随意。</li>
+</ol>
+<ul>
+<li>响应</li>
+</ul>
+<pre><code>协议名/版本 状态码（默认200） 状态字符串
+//以上为状态行
+Content-Type：响应体格式（其他一般不用管）
+//以上为响应头
+
+//响应头和响应体体中间要加一个回车
+响应体（即下载内容）
+</code></pre><p>例如：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/22/16fcdbba5db72f39?w=334&amp;h=148&amp;f=png&amp;s=20138" alt=""></p>
+<p>Notes：</p>
+<ol>
+<li>响应格式分为状态行，响应头，响应体。</li>
+<li>常见的状态码是考点。</li>
+<li>文档在<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html">RFC 2612 第六章</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/>http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E6%B5%85%E6%9E%90url/" class="prev" rel="prev" title="浅析URL"><i class="iconfont icon-left"></i>&nbsp;浅析URL</a>
+         
+        
+        <a href="http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" class="next" rel="next" title="算法入门上">算法入门上&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

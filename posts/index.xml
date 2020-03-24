@@ -6,26 +6,172 @@
     <description>Recent content in Posts on 隋鑫的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Mar 2020 19:30:02 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 16:06:02 +0800</lastBuildDate>
     
 	<atom:link href="http://suixin.monster/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>开博大吉</title>
-      <link>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
-      <pubDate>Mon, 23 Mar 2020 19:30:02 +0800</pubDate>
+      <title>有关数据响应式</title>
+      <link>http://suixin.monster/%E6%9C%89%E5%85%B3%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</link>
+      <pubDate>Sun, 15 Mar 2020 16:06:02 +0800</pubDate>
       
-      <guid>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
-      <description>隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ </description>
+      <guid>http://suixin.monster/%E6%9C%89%E5%85%B3%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</guid>
+      <description>git
+## 数据响应式 Vue基本不用手动操作 dom，data 中声明的数据状态改变后会自动重新渲染相关的 dom。 换句话说就是 Vue 自己知道哪个数据状态发生了变化及哪里有用到这个数据需要随之修改。 ### 关于数据响应式的问题 - 怎样知道数据发生了变化？ Vue3 之前使用了 ES5 的一个 API Object.defineProperty Vue3 中使用了 ES6 的 Proxy，都是对需要侦测的数据进行 变化侦测 ，添加 getter 和 setter ，这样就可以知道数据何时被读取和修改。 - 怎样知道数据变化后哪里需要修改？ Vue 对于每个数据都收集了与之相关的 依赖 ，这里的依赖其实就是一个对象，保存有该数据的旧值及数据变化后需要执行的函数。每个响应式的数据变化时会遍历通知其对应的每个依赖，依赖收到通知后会判断一下新旧值有没有发生变化，如果变化则执行回调函数响应数据变化（比如修改 dom）。 ## object.Defineproperty ``` Object.defineProperty(obj, prop, descriptor) ``` - 参数说明： obj：必需。目标对象 prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性 - 返回值： 传入函数的对象。即第一个参数obj 针对属性，我们可以给这个属性设置一些特性，比如是否只读不可以写；是否可以被for..in或Object.keys()遍历。 给对象的属性添加特性描述，目前提供两种形式：数据描述和存取器描述。 这个属性一般是已经定义完却还想加属性的时候用 ## 关于getter/setter ``` let obj0 = { 姓: &amp;quot;高&amp;quot;, 名: &amp;quot;圆圆&amp;quot;, age: 18 }; let obj1 = { 姓: &amp;quot;高&amp;quot;, 名: &amp;quot;圆圆&amp;quot;, 姓名() { return this.</description>
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>http://suixin.monster/my-first-post/</link>
+      <title>关于跨域</title>
+      <link>http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/</link>
+      <pubDate>Thu, 27 Feb 2020 21:25:28 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/</guid>
+      <description>同源策略 浏览器故意设计的一个功能限制
+ 源和同源  输入window.origin或者location.origin可以得到当前源
+源=协议+域名+端口号，若两个 url 的协议，域名，端口号完全一致，那么这两个 url 就是同源的。
+ 同源策略  浏览器规定，如果 JS 运行在源 A 里，那么就只能获取源 A 的数据，不能获取源 B 的数据。也就是说，不同源的页面之间，不准互相访问数据，即不允许跨域。
+note: referer 可以看出发的请求是否有区别。
+Q: 为什么可以跨域使用CSS，JS和图片？ A: 同源策略限制的是数据访问，我们只是引用了CSS，JS和图片，但不知道其具体内容。  CORS(跨域资源共享) 突破浏览器数据共享限制的方法,要共享数据前，需要提前声明。
+添加响应头：
+response.setHeader(&#39;Access-Control-Allow-Origin&#39;,&#39;http://foo.example&#39;) CORS 分为简单请求和复杂请求，具体看MDN 文档
+JSONP 在跨域时，因为某些条件，当前浏览器不支持 CORS，必须使用另一种方式跨域。于是我们请求一个 JS 文件，这个 JS 文件会执行一个回调(callback)，回调里就有想要的数据。
+回调名字是可以随机生成的一个随机数，用这个名字以 callback 的参数传给后台，后台把这个函数再返回给我们，再执行。
+优点：
+ 兼容 IE 可以跨域  缺点：
+ 由于是 script 标签，所以他读不了 AJAX 那么精确(不知道状态码和响应头)，只知道成功和失败。 由于是 script 标签，只能发 get 请求，即 JSONP 不支持 post。  </description>
+    </item>
+    
+    <item>
+      <title>异步和promise</title>
+      <link>http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/</link>
+      <pubDate>Tue, 18 Feb 2020 23:25:11 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/</guid>
+      <description>异步   相关解释：
+  若能直接拿到结果，不拿到结果不离开,就是同步。
+例如：去医院挂号，拿到号才能离开窗口。
+  不能直接拿到结果，则是异步。
+例如：去餐厅门口等位，可以拿到号去逛逛，而每 10 分钟去餐厅问一下，为轮询，扫码用微信接收通知，就是回调。
+  轮询和回调都能拿到结果，只是方式不同。
+  以 AJAX 为例，request.send()后，并不能直接拿到request.response,必须等到 readyState 变 4 后，浏览器才回头调用(回调)request.onreadystatechange()，之后才能得到request.response。
+    回调 callback
+写了一个函数 A，传给另一个函数 B 调用，那么函数 A 就是回调。
+例如：有的时候回调还可以传给一个对象，request.onreadystatechange()就是写给浏览器调用的，就是让浏览器将来回头调用一下这个函数。
+再例如：
+function f1(){} function f2(fn){ fn() } f2(f1) //自己没有调用f1，而f2调用了f1,f1就是回调，f2为自己调用的   异步和回调的关系
+ 关联：异步任务在需要在得到结果时通知 JS 来拿结果，让 JS 留一个函数地址给浏览器，异步任务完成时浏览器调用该函数地址即可，同时将结果作为参数传给该函数该函数就是写给浏览器调用的，为回调函数。 区别：异步任务需要用到回调函数来通知结果，但回调函数不一定只用在异步任务中，回调还可以用到同步任务中。  例如：
+array.forEach(n=&amp;gt;console.log()) //同步回调   判断同步异步
+如果一个函数返回值处于
+ setTimeout AJAX(即 XMLHttpRequest) AddEventListener  上述三个函数内部，那么这个函数就是异步函数。</description>
+    </item>
+    
+    <item>
+      <title>关于jQuery</title>
+      <link>http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/</link>
+      <pubDate>Sat, 15 Feb 2020 22:48:52 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/</guid>
+      <description>jQuery 如何获取元素 jQuery 的基本设计思想和主要用法，就是&amp;quot;选择某个网页元素，然后对其进行某种操作&amp;rdquo;。这是它区别于其他 Javascript 库的根本特点。
+使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择网页中第一个a元素 $(&#39;tr:odd&#39;) //选择表格的奇数行 $(&#39;#myForm :input&#39;) // 选择表单中的input元素 $(&#39;div:visible&#39;) //选择可见的div元素 $(&#39;div:gt(2)&#39;) // 选择所有的div元素，除了前三个 $(&#39;div:animated&#39;) // 选择当前处于动画状态的div元素 改变结果集 jQuery 设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，缩小选择结果。
+$(&#39;div&#39;).has(&#39;p&#39;); // 选择包含p元素的div元素 $(&#39;div&#39;).not(&#39;.myClass&#39;); //选择class不等于myClass的div元素 $(&#39;div&#39;).filter(&#39;.myClass&#39;); //选择class等于myClass的div元素 $(&#39;div&#39;).first(); //选择第1个div元素 $(&#39;div&#39;).eq(5); //选择第6个div元素 有时候，我们需要从结果集出发，移动到附近的相关元素，jQuery 也提供了在 DOM 树上的移动方法：
+$(&#39;div&#39;).next(&#39;p&#39;); //选择div元素后面的第一个p元素 $(&#39;div&#39;).parent(); //选择div元素的父元素 $(&#39;div&#39;).closest(&#39;form&#39;); //选择离div最近的那个form父元素 $(&#39;div&#39;).children(); //选择div的所有子元素 $(&#39;div&#39;).siblings(); //选择div的同级元素 jQuery 的链式操作 jQuery 设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来，比如：</description>
+    </item>
+    
+    <item>
+      <title>关于DOM</title>
+      <link>http://suixin.monster/%E5%85%B3%E4%BA%8Edom/</link>
+      <pubDate>Sun, 09 Feb 2020 21:02:40 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%85%B3%E4%BA%8Edom/</guid>
+      <description>DOM:文档对象模型(Document Object Model)
+API  获取任意元素，也叫标签  window.idxxx或直接idxxx document.getElementByid(&#39;idxxx&#39;) //获取与全局属性冲突的id document.getElementsByTagName(&#39;div&#39;)[0] //获取所有标签名为div的元素，因为是全部div，需要下标获取单独的div document.getElementsByClassName(&#39;div&#39;)[0] //获取class的类名元素 document.querySelector(&#39;#idxxx&#39;) //获取id document.querySelector(&#39;div&amp;gt;span:nth-child(2 )&#39;) document.querySelectorAll(&#39;.red&#39;)[0] notes：
+ 兼容 IE 才用 getElement(s)Byxxx 工作用 querySelector 和 querySelectorAll 做 demo 直接用 idxxx   获取特定元素  document.documentElement //获取html元素 document.head //获取head元素 document.body //获取body元素 window //获取窗口（窗口不是元素），为添加全局的事件监听 document.all //获取所有元素，IE发明的，在其他浏览器里为假值，为第六个falsy值 Node x.nodeType 可以得到一个数字，其中
+ 元素 Element，也叫便签 Tag 文本 text 注释 Comment 文档 Document 表示文档片段 DocumentFragment  节点的增删改查   增
+ 创建一个标签节点  let div1 = document.</description>
+    </item>
+    
+    <item>
+      <title>算法入门下</title>
+      <link>http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</link>
+      <pubDate>Thu, 06 Feb 2020 22:33:46 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/</guid>
+      <description>选择排序(续) 重写 minIndex 循环思路：
+let minIndex = (numbers) =&amp;gt; { let index = 0 for(let i = 1;i &amp;lt; numbers.length; i++){ if(numbers[i] &amp;lt; numbers[index]){ index = 1 } } return index } 重写 sort let sort = (numbers) =&amp;gt; { for(let i=0;i&amp;lt;numbers.length - 1;i++){ console.log(`----`) console.log(`i: ${i}`) let index = minIndex(numbers.slice(i)) + i //若循环已经找到第一个最小的数字，则之后再找最小时，忽略第一个 console.log(`index: ${index}`) console.log(`min: ${numbers[index]}`) if(index!==i){ swap(number,index,i) console.log(`swap ${index}: ${i}`) console.log(numbers) } } return numbers } let minIndex = (numbers) =&amp;gt; { let index = 0 for(let i = 1;i &amp;lt; numbers.</description>
+    </item>
+    
+    <item>
+      <title>算法入门上</title>
+      <link>http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Tue, 04 Feb 2020 22:38:49 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/</guid>
+      <description>查找两个数中较大的 let maxOf2 = (numbers) =&amp;gt;{ if(numbers[0] &amp;lt; number[1]){ return number[1] }else { return number[0] } } 优化：
+let maxOf2 = numbers =&amp;gt; number[0] &amp;lt; number[1] ?number[1]:number[0] 再优化：
+let maxOf2 = ([a,b]) =&amp;gt; a &amp;lt; b ? b : a //析构赋值 maxOf2([1,2])//2,新手调用法 maxOf2.call(null,[1,3])//3,老手调用法 JS 内置了 Math.max 的 API
+Math.max(2,3)//3 Math.max.call(null,2,3)//3 Math.max.apply(null,[2,3])//3 除了 Math 是对象，其他首字母大写的都是构造函数！
+查找三个数字中最大的 let maxOf3 = ([a,b,c]) =&amp;gt; { return maxOf2([ a, maxOf2([b,c]) ]) } 推理出 4 个数中最大的：</description>
+    </item>
+    
+    <item>
+      <title>系统学习HTTP</title>
+      <link>http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/</link>
+      <pubDate>Fri, 24 Jan 2020 21:28:20 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/</guid>
+      <description>体系化学习  基础概念（必会的） 如何调试（用的是 node.js，可以用 log/debugger） 查资料（node.js 文档） 标准制定者（HTTP 规格文档：RFC 2612 等） CRM 学习法（copy，run，modify）  HTTP 基础概念  请求  请求动词 路径/查询参数 协议名/版本 //以上是请求行 Host：域名或者IP Accept： 接收内容 Content-type：请求体的格式 //以上为请求头 //请求头和请求体中间要加一个回车 请求体（上传的内容） 例如：
+Notes：
+ 请求格式主要分为：请求行，请求头，请求体。 请求动词有：GET（获取）/POST（上传）/PUT/PATCH/DELETE 等。 请求体在 GET 请求中一般为空。 具体文档RFC 2612 第五章 大小写随意。   响应  协议名/版本 状态码（默认200） 状态字符串 //以上为状态行 Content-Type：响应体格式（其他一般不用管） //以上为响应头 //响应头和响应体体中间要加一个回车 响应体（即下载内容） 例如：
+Notes：
+ 响应格式分为状态行，响应头，响应体。 常见的状态码是考点。 文档在RFC 2612 第六章  </description>
+    </item>
+    
+    <item>
+      <title>浅析URL</title>
+      <link>http://suixin.monster/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Thu, 16 Jan 2020 00:34:31 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E6%B5%85%E6%9E%90url/</guid>
+      <description>IP：网际协议，全称 Internet Protocal。 主要有两个功能：标识主机或者网络和寻址。 约定了：
+ 如何定位一台设备。 如何封装数据报文，以跟其他设备交流。  IP 分为内网和外网。
+ 外网 IP 可在 ip138.com 可查看外网 IP，而重启路由器后，可能会重新分配一个外网 IP。
+内网 IP 一般格式为 192.168.xxx.xxx，一般路由器 IP 为 192.168.1.1。
+几个特殊的 IP  127.0.0.1 表示自己。 localhost 通过 hosts 指定为自己。 0.0.0.0 不表示任何设备。  hosts 文件 Windows 系统中，hosts 位于 C:\Windows\System32\drivers\etc\hosts 。在 macOS / Linux 系统中，hosts 位于 /etc/hosts。
+端口 Port 一台机器可以提供不同服务。
+ 要提供 HTTP 服务最好使用 80 端口。 要提供 HTTPS 服务最好使用 433 端口。 要提供 FTP 服务最好使用 21 端口。 一共有 65535 个端口。（基本上够用）  端口规则   0 到 1023 号端口是留给系统使用的，拥有了管理员权限后，才能使用 0-1023 号端口。</description>
+    </item>
+    
+    <item>
+      <title>使用hugo搭建个人博客mac版</title>
+      <link>http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/</link>
+      <pubDate>Wed, 01 Jan 2020 22:15:24 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/</guid>
+      <description>大家好，今天给大家分享下如何使用 hugo 搭建个人博客 1.安装 hugo 在终端中输入 brew install hugo安装。
+安装成功后可输入hugo version查看版本信息。
+ 2.创建新网址 hugo new site quickstart 其中quickstart更改为用户名.github.io-creator（用户名为 github 用户名，需要小写） 使用code 用户名.github.io-creator使用 vscode 查看目录
+ 3.添加一个主题 在 vscode 目录下打开新的终端，输入 git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+然后，将默认主题添加到站点配置中：
+echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
+还可自定义主题，具体可浏览hugo官网查看教程。
+ 4.添加一些文件 hugo new posts/my-first-post.md
+其中my-first-post可更改博客名。 可从下图内容后编辑 并将draft：ture更改为draft：false。
+ 5.启动 Hugo 服务器 hugo server -D
+ 6.建立静态页面 hugo -D 自动创建一个 public 目录。
+7.上传至 github   在 vscode 新建一个.</description>
+    </item>
+    
+    <item>
+      <title>开博大吉</title>
+      <link>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
       <pubDate>Fri, 13 Dec 2019 17:59:01 +0800</pubDate>
       
-      <guid>http://suixin.monster/my-first-post/</guid>
+      <guid>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
       <description>隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ </description>
     </item>
     

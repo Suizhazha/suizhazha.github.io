@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/" />
+  <link rel="next" href="http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/" />
+  <link rel="canonical" href="http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           异步和promise | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="异步和promise | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "异步和promise",
+    "headline" : "异步和promise",
+    "description" : "异步   相关解释：\n  若能直接拿到结果，不拿到结果不离开,就是同步。\n例如：去医院挂号，拿到号才能离开窗口。\n  不能直接拿到结果，则是异步。\n例如：去餐厅门口等位，可以拿到号去逛逛，而每 10 分钟去餐厅问一下，为轮询，扫码用微信接收通知，就是回调。\n  轮询和回调都能拿到结果，只是方式不同。\n  以 AJAX 为例，request.send()后，并不能直接拿到request.response,必须等到 readyState 变 4 后，浏览器才回头调用(回调)request.onreadystatechange()，之后才能得到request.response。\n    回调 callback\n写了一个函数 A，传给另一个函数 B 调用，那么函数 A 就是回调。\n例如：有的时候回调还可以传给一个对象，request.onreadystatechange()就是写给浏览器调用的，就是让浏览器将来回头调用一下这个函数。\n再例如：\nfunction f1(){} function f2(fn){ fn() } f2(f1) \/\/自己没有调用f1，而f2调用了f1,f1就是回调，f2为自己调用的   异步和回调的关系\n 关联：异步任务在需要在得到结果时通知 JS 来拿结果，让 JS 留一个函数地址给浏览器，异步任务完成时浏览器调用该函数地址即可，同时将结果作为参数传给该函数该函数就是写给浏览器调用的，为回调函数。 区别：异步任务需要用到回调函数来通知结果，但回调函数不一定只用在异步任务中，回调还可以用到同步任务中。  例如：\narray.forEach(n=\x26gt;console.log()) \/\/同步回调   判断同步异步\n如果一个函数返回值处于\n setTimeout AJAX(即 XMLHttpRequest) AddEventListener  上述三个函数内部，那么这个函数就是异步函数。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-18 23:25:11 \x2b0800 CST",
+    "dateModified" : "2020-02-18 23:25:11 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise\/",
+    "wordCount" : "221",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">异步和promise</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-18 itemprop="datePublished">February 18, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="异步">异步</h2>
+<ul>
+<li>
+<p>相关解释：</p>
+<ol>
+<li>
+<p>若能直接拿到结果，不拿到结果不离开,就是同步。</p>
+<p>例如：去医院挂号，拿到号才能离开窗口。</p>
+</li>
+<li>
+<p>不能直接拿到结果，则是异步。</p>
+<p>例如：去餐厅门口等位，可以拿到号去逛逛，而每 10 分钟去餐厅问一下，为轮询，扫码用微信接收通知，就是回调。</p>
+</li>
+<li>
+<p>轮询和回调都能拿到结果，只是方式不同。</p>
+</li>
+<li>
+<p>以 AJAX 为例，<code>request.send()</code>后，并不能直接拿到<code>request.response</code>,必须等到 readyState 变 4 后，浏览器才回头调用(回调)<code>request.onreadystatechange()</code>，之后才能得到<code>request.response</code>。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>回调 callback</p>
+<p>写了一个函数 A，传给另一个函数 B 调用，那么函数 A 就是回调。</p>
+<p>例如：有的时候回调还可以传给一个对象，<code>request.onreadystatechange()</code>就是写给浏览器调用的，就是让浏览器将来回头调用一下这个函数。</p>
+<p>再例如：</p>
+<pre><code>function f1(){}
+function f2(fn){
+    fn()
+}
+
+ f2(f1)
+//自己没有调用f1，而f2调用了f1,f1就是回调，f2为自己调用的
+</code></pre></li>
+<li>
+<p>异步和回调的关系</p>
+<ol>
+<li>关联：异步任务在需要在得到结果时通知 JS 来拿结果，让 JS 留一个函数地址给浏览器，异步任务完成时浏览器调用该函数地址即可，同时将结果作为参数传给该函数该函数就是写给浏览器调用的，为回调函数。</li>
+<li>区别：异步任务需要用到回调函数来通知结果，但回调函数不一定只用在异步任务中，回调还可以用到同步任务中。</li>
+</ol>
+<p>例如：</p>
+<pre><code>array.forEach(n=&gt;console.log())
+//同步回调
+</code></pre></li>
+<li>
+<p>判断同步异步</p>
+<p>如果一个函数返回值处于</p>
+<ol>
+<li>setTimeout</li>
+<li>AJAX(即 XMLHttpRequest)</li>
+<li>AddEventListener</li>
+</ol>
+<p>上述三个函数内部，那么这个函数就是异步函数。</p>
+</li>
+</ul>
+<h2 id="promise">promise</h2>
+<p>异步任务有两个结果时，可以用一个回调接收两个参数，还可以使用两个回调，但两个方法都有问题，而 promise 正好解决了这些问题。</p>
+<ol>
+<li>代码更规范。</li>
+<li>容易出现回调地狱，让代码可读性更强。</li>
+<li>方便进行错误处理。</li>
+</ol>
+<p>以简单的 AJAX 的封装为例：</p>
+<pre><code>ajax = (method,url,options) =&gt;{
+
+    //析构赋值，从options里拿出两个变量，后面直接使用
+    const {success,fail} = options
+
+    const request = new XMLHttpRequest();
+    request.open(method，url);
+    request.onreadystatechange = () =&gt;{
+    if (request.readyState === 4) {
+
+        //成功就调用 success，失败则调用fail
+        if (request.status &lt; 400) {
+            success.call(null,request.response)
+            }else if(request.status &gt;= 400){
+                fail.call(null,request,request.status)
+                 }
+         }
+    }
+    request.send()
+}//封装完成
+
+ajax('get','/xxx',{
+
+    //左边是function缩写，右边为箭头函数
+    success(response){},fail:(request,status) =&gt;{}
+})//调用
+</code></pre><p>使用 promise 修改：</p>
+<pre><code>ajax = (method,url,options) =&gt;{
+
+    //new Promise接收一个函数
+    return new Promise((resolve,reject)=&gt;{
+        const {success,fail} = options//析构赋值
+        const request = new XMLHttpRequest();
+        request.open(method，url);
+        request.onreadystatechange = () =&gt;{
+        if (request.readyState === 4) {
+
+            //成功就调用 resolve，失败则调用reject
+            if (request.status &lt; 400) {
+                resolve.call(null,request.response)
+            }else if(request.status &gt;= 400){
+                reject.call(null,request)
+                 }
+         }
+    }
+    request.send()
+  })
+}//封装完成
+
+ajax('get','/xxx')
+    .then((response) =&gt; {}, (request)=&gt;{})
+</code></pre><ol>
+<li>
+<p>虽然也是回调，但不需要记 success，fail。</p>
+</li>
+<li>
+<p>then 的第一个参数为 success，第二个参数为 fail。</p>
+</li>
+<li>
+<p>ajax()返回了一个.then()方法的对象。</p>
+</li>
+<li>
+<p>背下<code>return new Promise((resolve,reject)=&gt;{})</code>以后就理解了。</p>
+</li>
+</ol>
+<p>如何将一个回调的异步函数改成 promise 异步函数：</p>
+<ol>
+<li>
+<p>首先 <code>return new Promise((resolve,reject)=&gt;{...})</code></p>
+<ul>
+<li>任务成功调用<code>resolve(result)</code>，任务失败调用<code>reject(error)</code>。</li>
+<li>resolve 和 reject 会再去调用成功和失败函数。</li>
+</ul>
+</li>
+<li>
+<p>再使用.then(success,fail)传入成功和失败函数</p>
+</li>
+</ol>
+<h2 id="jqueryajax">jQuery.ajax</h2>
+<p>优点：</p>
+<ol>
+<li>支持更多形式的参数</li>
+<li>支持 Promise</li>
+<li>支持功能更多</li>
+</ol>
+<h3 id="但现在很少使用了专业前端都用-axios">但现在很少使用了，专业前端都用 axios</h3>
+<h2 id="axios">axios</h2>
+<p>最新的 AJAX 库，抄袭了 jQuery 的封装思路 ，<a href="https://juejin.im/post/5a9cddb46fb9a028bc2d3c2f">推荐方方的博客</a>快速了解 axiosd 的用法。</p>
+<ul>
+<li>代码示例</li>
+</ul>
+<pre><code>axios.get
+</code></pre><ul>
+<li>axios 高级用法</li>
+</ul>
+<ol>
+<li>
+<p>JSON 自动处理</p>
+<p>axios 发现响应的 Content-Type 是 json，就会自动调用 JSON.parse。</p>
+</li>
+<li>
+<p>请求拦截器</p>
+<p>可以在所有请求里加东西，如加查询参数。</p>
+</li>
+<li>
+<p>响应拦截器</p>
+<p>可以在所有响应里加东西，甚至改内容。</p>
+</li>
+<li>
+<p>可以生成不同实例（对象）</p>
+<p>不同实例可以设置不同配置，用于复杂场景。</p>
+</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/>http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/" class="prev" rel="prev" title="关于jQuery"><i class="iconfont icon-left"></i>&nbsp;关于jQuery</a>
+         
+        
+        <a href="http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/" class="next" rel="next" title="关于跨域">关于跨域&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

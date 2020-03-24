@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" />
+  <link rel="next" href="http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/" />
+  <link rel="canonical" href="http://suixin.monster/%E5%85%B3%E4%BA%8Edom/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           关于DOM | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="关于DOM | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "关于DOM",
+    "headline" : "关于DOM",
+    "description" : "DOM:文档对象模型(Document Object Model)\nAPI  获取任意元素，也叫标签  window.idxxx或直接idxxx document.getElementByid(\x27idxxx\x27) \/\/获取与全局属性冲突的id document.getElementsByTagName(\x27div\x27)[0] \/\/获取所有标签名为div的元素，因为是全部div，需要下标获取单独的div document.getElementsByClassName(\x27div\x27)[0] \/\/获取class的类名元素 document.querySelector(\x27#idxxx\x27) \/\/获取id document.querySelector(\x27div\x26gt;span:nth-child(2 )\x27) document.querySelectorAll(\x27.red\x27)[0] notes：\n 兼容 IE 才用 getElement(s)Byxxx 工作用 querySelector 和 querySelectorAll 做 demo 直接用 idxxx   获取特定元素  document.documentElement \/\/获取html元素 document.head \/\/获取head元素 document.body \/\/获取body元素 window \/\/获取窗口（窗口不是元素），为添加全局的事件监听 document.all \/\/获取所有元素，IE发明的，在其他浏览器里为假值，为第六个falsy值 Node x.nodeType 可以得到一个数字，其中\n 元素 Element，也叫便签 Tag 文本 text 注释 Comment 文档 Document 表示文档片段 DocumentFragment  节点的增删改查   增\n 创建一个标签节点  let div1 = document.",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-09 21:02:40 \x2b0800 CST",
+    "dateModified" : "2020-02-09 21:02:40 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/%E5%85%B3%E4%BA%8Edom\/",
+    "wordCount" : "198",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">关于DOM</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-09 itemprop="datePublished">February 9, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>DOM:文档对象模型(Document Object Model)</p>
+<h2 id="api">API</h2>
+<ul>
+<li>获取任意元素，也叫标签</li>
+</ul>
+<pre><code>window.idxxx或直接idxxx
+
+document.getElementByid('idxxx')
+//获取与全局属性冲突的id
+
+document.getElementsByTagName('div')[0]
+//获取所有标签名为div的元素，因为是全部div，需要下标获取单独的div
+
+document.getElementsByClassName('div')[0]
+//获取class的类名元素
+
+document.querySelector('#idxxx')
+//获取id
+
+document.querySelector('div&gt;span:nth-child(2  )')
+
+document.querySelectorAll('.red')[0]
+</code></pre><p>notes：</p>
+<ol>
+<li>兼容 IE 才用 getElement(s)Byxxx</li>
+<li>工作用 querySelector 和 querySelectorAll</li>
+<li>做 demo 直接用 idxxx</li>
+</ol>
+<ul>
+<li>获取特定元素</li>
+</ul>
+<pre><code>document.documentElement
+//获取html元素
+
+document.head
+//获取head元素
+
+document.body
+//获取body元素
+
+window
+//获取窗口（窗口不是元素），为添加全局的事件监听
+
+document.all
+//获取所有元素，IE发明的，在其他浏览器里为假值，为第六个falsy值
+</code></pre><h2 id="node">Node</h2>
+<p>x.nodeType 可以得到一个数字，其中</p>
+<ol>
+<li>元素 Element，也叫便签 Tag</li>
+<li>文本 text</li>
+<li>注释 Comment</li>
+<li>文档 Document</li>
+<li>表示文档片段 DocumentFragment</li>
+</ol>
+<h3 id="节点的增删改查">节点的增删改查</h3>
+<ul>
+<li>
+<p>增</p>
+<ol>
+<li>创建一个标签节点</li>
+</ol>
+<pre><code>let div1 = document.createElement('div')
+document.createElement('style')
+document.createElement('script')
+</code></pre><ol start="2">
+<li>创建一个文本节点</li>
+</ol>
+<pre><code>text1 = document.createTextNode('你好')
+</code></pre><ol start="3">
+<li>标签里插文本</li>
+</ol>
+<pre><code>div1.appendChild(text1)
+//Node接口
+或者
+div1.innerText = '你好'
+或者
+div1.textContent = '你好'
+//Element接口
+</code></pre><ol start="4">
+<li>插入页面里
+创建的标签默认在 JS 线程中，必须插到 head 或 body 中，才会生效</li>
+</ol>
+<pre><code>document.body.appendChild(div1)
+</code></pre></li>
+<li>
+<p>删</p>
+<pre><code>div1.parentNode.removechild(div1)
+//从DOM中删除div1，但还在内存中，而div1 = null可彻底移除
+或者
+div1.remove()
+//IE不支持
+
+document.body.appendChild(div1)
+//  恢复div1
+</code></pre></li>
+<li>
+<p>改</p>
+<ol>
+<li>修改属性</li>
+</ol>
+<pre><code>div1.className = 'red'
+//全覆盖
+div1.classList.add('green')
+//新语法，推荐
+
+div1.style.color = 'bule'
+//修改部分样式
+
+div1.style.backgroundColor = 'white'
+</code></pre><ol start="2">
+<li>改事件处理函数</li>
+</ol>
+<pre><code>div1.onclick = function(x){
+    console.log(this)
+    console.log(arguments[0])
+}
+//当用户点击div时，该this为div，arguments[0] 是事件相关的信息组成的对象
+
+div1.addEventListener
+//div1.onclick升级版
+</code></pre><ol start="3">
+<li>修改内容</li>
+</ol>
+<pre><code>text.innerText = 'hi'
+或者
+text.textContent = 'hi'
+//修改文本内容
+
+div.innerHTML = '&lt;strong&gt;hi&lt;/strong&gt;'
+//修改HTML内容
+
+div.innerHTML = ''
+div.appendChild(div1)
+//修改标签，先清空，再修改
+</code></pre><ol start="4">
+<li>修改 parent</li>
+</ol>
+<pre><code>newParent.appendChild(div)
+</code></pre></li>
+<li>
+<p>读</p>
+<pre><code>div1.classList
+或者
+div1.getAttribute('class')
+//但两种获取的值可能有所不同
+</code></pre></li>
+<li>
+<p>查</p>
+<ol>
+<li>查 parent</li>
+</ol>
+<pre><code>node.parentNode
+或
+node.parentElement
+</code></pre><ol start="2">
+<li>查 child</li>
+</ol>
+<pre><code>node.childNodes
+//包括文本节点
+或
+node.children
+//不包括文本节点，推荐
+</code></pre><ol start="3">
+<li>查兄弟</li>
+</ol>
+<pre><code>node.perentNode.children
+//需要利用遍历排除自己
+</code></pre><ol start="4">
+<li>查看老大老幺</li>
+</ol>
+<pre><code>node.firstChild
+node.lastChild
+</code></pre><ol start="5">
+<li>查看上一个哥哥或下一个弟弟</li>
+</ol>
+<pre><code>node.previousSibling
+node.nextSibling
+</code></pre><ol start="6">
+<li>遍历一个 div 中所有元素</li>
+</ol>
+<pre><code>travel = (node, fn) =&gt; {
+    fn(node)
+    if(node.children){
+        for(let i = 0;i&lt;node.children.length;i++){
+            travel(node.children[i],fn)
+        }
+    }
+}
+travel( div1,(node) =&gt; console.log(node) )
+</code></pre></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/%E5%85%B3%E4%BA%8Edom/>http://suixin.monster/%E5%85%B3%E4%BA%8Edom/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E4%B8%8B/" class="prev" rel="prev" title="算法入门下"><i class="iconfont icon-left"></i>&nbsp;算法入门下</a>
+         
+        
+        <a href="http://suixin.monster/%E5%85%B3%E4%BA%8Ejquery/" class="next" rel="next" title="关于jQuery">关于jQuery&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
