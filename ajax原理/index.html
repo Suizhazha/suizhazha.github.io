@@ -9,9 +9,9 @@
   <meta name="description" content="隋鑫的个人网站">
   <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
   
-  
-  <link rel="next" href="http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" />
-  <link rel="canonical" href="http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" />
+  <link rel="prev" href="http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/" />
+  <link rel="next" href="http://suixin.monster/json%E6%B5%85%E6%9E%90/" />
+  <link rel="canonical" href="http://suixin.monster/ajax%E5%8E%9F%E7%90%86/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           开博大吉 | 隋鑫的个人网站
+           AJAX原理 | 隋鑫的个人网站
        
   </title>
-  <meta name="title" content="开博大吉 | 隋鑫的个人网站">
+  <meta name="title" content="AJAX原理 | 隋鑫的个人网站">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,20 +44,20 @@
          "@id": "http:\/\/suixin.monster\/"
     },
     "articleSection" : "posts",
-    "name" : "开博大吉",
-    "headline" : "开博大吉",
-    "description" : "隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ ",
+    "name" : "AJAX原理",
+    "headline" : "AJAX原理",
+    "description" : "AJAX：Asynchronous JavaScript and XML 异步的 JavaScript 与 XML 技术），即使用 JS 发送请求和接收响应。\nAJAX 原理  步骤：  创建 HttpRequest 对象(XMLHttpRequest()) 调用对象的 open 方法（查看 mdn,只用 method 和 url，后面的参数都不用） 监听对象的 onload 和 onerror 事件  专业前端会改用 onreadystatechange 在事件处理函数里操作相应文件内容   调用对象的 send 方法(发送请求)    例如：\n加载 HTML\n getHTML.onclick = () =\x26gt; { const request = new XMLHttpRequest() request.open(\x27GET\x27, \x27\/1.html\x27)\/\/read state = 1 request.onreadystatechange = () =\x26gt; { \/\/2xx一般表示成功 if (request.readyState === 4) { if (request.",
     "inLanguage" : "zh-CN",
     "author" : "隋鑫",
     "creator" : "隋鑫",
     "publisher": "隋鑫",
     "accountablePerson" : "隋鑫",
     "copyrightHolder" : "隋鑫",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-12-13 17:59:01 \x2b0800 CST",
-    "dateModified" : "2019-12-13 17:59:01 \x2b0800 CST",
-    "url" : "http:\/\/suixin.monster\/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89\/",
-    "wordCount" : "2",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-20 16:06:02 \x2b0800 CST",
+    "dateModified" : "2020-02-20 16:06:02 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/ajax%E5%8E%9F%E7%90%86\/",
+    "wordCount" : "134",
     "keywords" : [  "隋鑫的个人网站"]
 }
 </script>
@@ -116,11 +116,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">开博大吉</h1>
+        <h1 class="post-title" itemprop="name headline">AJAX原理</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-12-13 itemprop="datePublished">December 13, 2019</time>
+                on <time datetime=2020-02-20 itemprop="datePublished">February 20, 2020</time>
                 </span>
                 in
                 
@@ -142,8 +142,64 @@
           
           
 
-          <h2 id="隋鑫的博客开通了">隋鑫的博客开通了！！！</h2>
-<h3 id="欢迎来到我的博客我会在这给大家分享一些自己学习编程的体会和感悟的">欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！</h3>
+          <p>AJAX：Asynchronous JavaScript and XML 异步的 JavaScript 与 XML 技术），即使用 JS 发送请求和接收响应。</p>
+<h3 id="ajax-原理">AJAX 原理</h3>
+<ul>
+<li>步骤：
+<ol>
+<li>创建 HttpRequest 对象(XMLHttpRequest())</li>
+<li>调用对象的 open 方法（查看 mdn,只用 method 和 url，后面的参数都不用）</li>
+<li>监听对象的 onload 和 onerror 事件
+<ul>
+<li>专业前端会改用 onreadystatechange</li>
+<li>在事件处理函数里操作相应文件内容</li>
+</ul>
+</li>
+<li>调用对象的 send 方法(发送请求)</li>
+</ol>
+</li>
+</ul>
+<p>例如：</p>
+<p>加载 HTML</p>
+<pre><code>    getHTML.onclick = () =&gt; {
+    const request = new XMLHttpRequest()
+    request.open('GET', '/1.html')//read state = 1
+    request.onreadystatechange = () =&gt; {
+
+        //2xx一般表示成功
+        if (request.readyState === 4) {
+            if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
+
+            // 创建一个div标签
+                const div = document.createElement(&quot;div&quot;);
+
+               // 填写div内容
+                div.innerHTML = request.response;
+
+                // 插入body中
+                 document.body.appendChild(div);
+                 } else {
+                     alert(&quot;加载1.html失败&quot;);
+                     }
+             }
+      }
+     request.send()//read state = 2
+}
+</code></pre><h3 id="解析方法">解析方法：</h3>
+<ul>
+<li>得到 CSS 后生成 style 标签</li>
+<li>得到 JS 后生成 script 标签</li>
+<li>得到 HTML 后使用 innerHTML 和 DOM API</li>
+<li>得到 XML 后使用 responseXML 和 DOM API</li>
+<li>不同类型数据有不同的解析方式</li>
+</ul>
+<h3 id="总结">总结：</h3>
+<ul>
+<li>HTTP 可以装 HTML,CSS,JS,XML,JSON 等等。</li>
+<li>设置正确的 Content-Type。</li>
+<li>知道如何解析这些内容，就可以使用这些内容。</li>
+</ul>
+<h3 id="完整加载代码请点击此链接httpsgithubcomsuizhazhaajax-demo-1"><a href="https://github.com/Suizhazha/AJAX-demo-1">完整加载代码，请点击此链接</a></h3>
 
     </div>
 
@@ -158,7 +214,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</span>
+                    <a href=http://suixin.monster/ajax%E5%8E%9F%E7%90%86/>http://suixin.monster/ajax%E5%8E%9F%E7%90%86/</span>
             </p>
             
              
@@ -178,9 +234,11 @@
     </div>
 
     <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E5%BC%82%E6%AD%A5%E5%92%8Cpromise/" class="prev" rel="prev" title="异步和promise"><i class="iconfont icon-left"></i>&nbsp;异步和promise</a>
          
         
-        <a href="http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" class="next" rel="next" title="HTML入门笔记">HTML入门笔记&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="http://suixin.monster/json%E6%B5%85%E6%9E%90/" class="next" rel="next" title="JSON浅析">JSON浅析&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

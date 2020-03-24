@@ -9,9 +9,9 @@
   <meta name="description" content="隋鑫的个人网站">
   <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
   
-  <link rel="prev" href="http://suixin.monster/json%E6%B5%85%E6%9E%90/" />
-  <link rel="next" href="http://suixin.monster/%E5%88%9D%E8%AF%86mvc/" />
-  <link rel="canonical" href="http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/" />
+  <link rel="prev" href="http://suixin.monster/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+  
+  <link rel="canonical" href="http://suixin.monster/template%E6%A8%A1%E6%9D%BF/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           关于跨域 | 隋鑫的个人网站
+           Template模板 | 隋鑫的个人网站
        
   </title>
-  <meta name="title" content="关于跨域 | 隋鑫的个人网站">
+  <meta name="title" content="Template模板 | 隋鑫的个人网站">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "http:\/\/suixin.monster\/"
     },
     "articleSection" : "posts",
-    "name" : "关于跨域",
-    "headline" : "关于跨域",
-    "description" : "同源策略 浏览器故意设计的一个功能限制\n 源和同源  输入window.origin或者location.origin可以得到当前源\n源=协议\x2b域名\x2b端口号，若两个 url 的协议，域名，端口号完全一致，那么这两个 url 就是同源的。\n 同源策略  浏览器规定，如果 JS 运行在源 A 里，那么就只能获取源 A 的数据，不能获取源 B 的数据。也就是说，不同源的页面之间，不准互相访问数据，即不允许跨域。\nnote: referer 可以看出发的请求是否有区别。\nQ: 为什么可以跨域使用CSS，JS和图片？ A: 同源策略限制的是数据访问，我们只是引用了CSS，JS和图片，但不知道其具体内容。  CORS(跨域资源共享) 突破浏览器数据共享限制的方法,要共享数据前，需要提前声明。\n添加响应头：\nresponse.setHeader(\x27Access-Control-Allow-Origin\x27,\x27http:\/\/foo.example\x27) CORS 分为简单请求和复杂请求，具体看MDN 文档\nJSONP 在跨域时，因为某些条件，当前浏览器不支持 CORS，必须使用另一种方式跨域。于是我们请求一个 JS 文件，这个 JS 文件会执行一个回调(callback)，回调里就有想要的数据。\n回调名字是可以随机生成的一个随机数，用这个名字以 callback 的参数传给后台，后台把这个函数再返回给我们，再执行。\n优点：\n 兼容 IE 可以跨域  缺点：\n 由于是 script 标签，所以他读不了 AJAX 那么精确(不知道状态码和响应头)，只知道成功和失败。 由于是 script 标签，只能发 get 请求，即 JSONP 不支持 post。  ",
+    "name" : "Template模板",
+    "headline" : "Template模板",
+    "description" : "Vue模板使用XML语法，使用{{}}插入表达式，使用v-html，v-on， v-bind等指令操作DOM，使用v-if，v-for等指令实现条件判断和循环。\n展示内容   表达式:\n  {{ object.a }} 表达式\n  {{ n\x2b1 }} 任何运算(不支持 if else)\n  {{ fn(n) }} 调用函数\n  若值为undefined 或者 null 就不显示\n  另一种写法\x26lt;div v-text=\x26quot;表达式\x26quot;\x26gt;\x26lt;\/div\x26gt;可代替{{}}\n    HTML内容:\n若 data.x 的值为\x26lt;strong\x26gt;hi\x26lt;\/strong\x26gt;\n则\x26lt;div v-html=\x26quot;x\x26quot;\x26gt;\x26lt;\/div\x26gt;即可显示粗体的hi。\n  展示{{ n }}\n\x26lt;div v-pre\x26gt;{{ n }} \x26lt;\/div\x26gt;\nv-pre 不会对模板进行编译\n  绑定属性  绑定src  \x26lt;img v-bind:src=\x26quot;x\x26quot; \/\x26gt; 可简写为: \x26lt;img :src=\x26quot;x\x26quot; \/\x26gt;  绑定对象  \/\/绑定内联事件 \x26lt;div :style = \x26quot;{border: \x271px\x27 solid red,height:100}\x26quot;\x26gt; \x26lt;\/div\x26gt;\/\/100px可以写成100，但100em不行 绑定事件  v-on：事件名  \/\/只写函数名，点击之后，Vue会运行add() \x26lt;button v-on:click= \x26quot;add\x26quot;\x26gt;\x2b1\x26lt;button\x26gt; \/\/函数名后加参数，点击之后，Vue会运行xxx(1) \x26lt;button v-on:click= \x26quot;xxx(1)\x26quot;\x26gt;xxx\x26lt;button\x26gt; \/\/直接写可执行代码，点击之后，Vue会运行n\x2b=1 \x26lt;button v-on:click= \x26quot;n\x2b=1\x26quot;\x26gt;xxx\x26lt;button\x26gt;  缩写!",
     "inLanguage" : "zh-CN",
     "author" : "隋鑫",
     "creator" : "隋鑫",
@@ -54,10 +54,10 @@
     "accountablePerson" : "隋鑫",
     "copyrightHolder" : "隋鑫",
     "copyrightYear" : "2020",
-    "datePublished": "2020-02-27 21:25:28 \x2b0800 CST",
-    "dateModified" : "2020-02-27 21:25:28 \x2b0800 CST",
-    "url" : "http:\/\/suixin.monster\/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F\/",
-    "wordCount" : "61",
+    "datePublished": "2020-03-20 23:08:43 \x2b0800 CST",
+    "dateModified" : "2020-03-20 23:08:43 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/template%E6%A8%A1%E6%9D%BF\/",
+    "wordCount" : "135",
     "keywords" : [  "隋鑫的个人网站"]
 }
 </script>
@@ -116,11 +116,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">关于跨域</h1>
+        <h1 class="post-title" itemprop="name headline">Template模板</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-02-27 itemprop="datePublished">February 27, 2020</time>
+                on <time datetime=2020-03-20 itemprop="datePublished">March 20, 2020</time>
                 </span>
                 in
                 
@@ -142,40 +142,108 @@
           
           
 
-          <h2 id="同源策略">同源策略</h2>
-<p>浏览器故意设计的一个功能限制</p>
+          <p>Vue模板使用XML语法，使用{{}}插入表达式，使用v-html，v-on， v-bind等指令操作DOM，使用v-if，v-for等指令实现条件判断和循环。</p>
+<h2 id="展示内容">展示内容</h2>
 <ul>
-<li>源和同源</li>
+<li>
+<p>表达式:</p>
+<ol>
+<li>
+<p>{{ object.a }}  表达式</p>
+</li>
+<li>
+<p>{{ n+1 }} 任何运算(不支持 if else)</p>
+</li>
+<li>
+<p>{{ fn(n) }} 调用函数</p>
+</li>
+<li>
+<p>若值为undefined 或者 null 就不显示</p>
+</li>
+<li>
+<p>另一种写法<code>&lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt;</code>可代替{{}}</p>
+</li>
+</ol>
+</li>
+<li>
+<p>HTML内容:</p>
+<p>若 data.x 的值为<code>&lt;strong&gt;hi&lt;/strong&gt;</code></p>
+<p>则<code>&lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt;</code>即可显示粗体的hi。</p>
+</li>
+<li>
+<p>展示{{ n }}</p>
+<p><code>&lt;div v-pre&gt;{{ n }} &lt;/div&gt;</code></p>
+<p>v-pre 不会对模板进行编译</p>
+</li>
 </ul>
-<p>输入<code>window.origin</code>或者<code>location.origin</code>可以得到当前源</p>
-<p>源=协议+域名+端口号，若两个 url 的协议，域名，端口号完全一致，那么这两个 url 就是同源的。</p>
+<h2 id="绑定属性">绑定属性</h2>
 <ul>
-<li>同源策略</li>
+<li>绑定src</li>
 </ul>
-<p>浏览器规定，如果 JS 运行在源 A 里，那么就只能获取源 A 的数据，不能获取源 B 的数据。也就是说，不同源的页面之间，不准互相访问数据，即不允许跨域。</p>
-<p>note: referer 可以看出发的请求是否有区别。</p>
-<pre><code>Q: 为什么可以跨域使用CSS，JS和图片？
+<pre><code>&lt;img v-bind:src=&quot;x&quot; /&gt;
+可简写为:
+&lt;img :src=&quot;x&quot; /&gt;
+</code></pre><ul>
+<li>绑定对象</li>
+</ul>
+<pre><code>//绑定内联事件
+&lt;div 
+    :style = &quot;{border: '1px' solid red,height:100}&quot;&gt;
+&lt;/div&gt;//100px可以写成100，但100em不行    
+</code></pre><h2 id="绑定事件">绑定事件</h2>
+<ul>
+<li>v-on：事件名</li>
+</ul>
+<pre><code>//只写函数名，点击之后，Vue会运行add()
+&lt;button v-on:click= &quot;add&quot;&gt;+1&lt;button&gt;
 
-A: 同源策略限制的是数据访问，我们只是引用了CSS，JS和图片，但不知道其具体内容。
-</code></pre>
-<h2 id="cors跨域资源共享">CORS(跨域资源共享)</h2>
-<p>突破浏览器数据共享限制的方法,要共享数据前，需要提前声明。</p>
-<p>添加响应头：</p>
-<pre><code>response.setHeader('Access-Control-Allow-Origin','http://foo.example')
-</code></pre><p>CORS 分为简单请求和复杂请求，具体看<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS">MDN 文档</a></p>
-<h2 id="jsonp">JSONP</h2>
-<p>在跨域时，因为某些条件，当前浏览器不支持 CORS，必须使用另一种方式跨域。于是我们请求一个 JS 文件，这个 JS 文件会执行一个回调(callback)，回调里就有想要的数据。</p>
-<p>回调名字是可以随机生成的一个随机数，用这个名字以 callback 的参数传给后台，后台把这个函数再返回给我们，再执行。</p>
-<p>优点：</p>
-<ol>
-<li>兼容 IE</li>
-<li>可以跨域</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>由于是 script 标签，所以他读不了 AJAX 那么精确(不知道状态码和响应头)，只知道成功和失败。</li>
-<li>由于是 script 标签，只能发 get 请求，即 JSONP 不支持 post。</li>
-</ol>
+//函数名后加参数，点击之后，Vue会运行xxx(1)
+&lt;button v-on:click= &quot;xxx(1)&quot;&gt;xxx&lt;button&gt;
+
+//直接写可执行代码，点击之后，Vue会运行n+=1
+&lt;button v-on:click= &quot;n+=1&quot;&gt;xxx&lt;button&gt;
+</code></pre><ul>
+<li><strong>缩写!!!</strong></li>
+</ul>
+<pre><code>&lt;button @click&gt;=&quot;add&quot;&gt;+1&lt;/button&gt;
+</code></pre><h2 id="条件判断">条件判断</h2>
+<ul>
+<li>if&hellip;else:</li>
+</ul>
+<pre><code>&lt;div v-if=&quot;x &gt; 0&quot;&gt;x&gt;0&lt;/div&gt;
+
+&lt;div v-else-if=&quot;x === 0&quot;&gt;x === 0&lt;/div&gt;
+
+&lt;div v-else&gt;x &lt; 0&lt;/div&gt;
+
+</code></pre><h2 id="循环">循环</h2>
+<ul>
+<li>for(value,key) in 对象或数组</li>
+</ul>
+<pre><code>//遍历数组
+&lt;ul&gt;
+    &lt;li v-for=&quot;(u,index) in users&quot; :key=&quot;index&quot;&gt; 
+    索引:{{index}} 值:{{u.name}}
+    &lt;/li&gt;
+&lt;/ul&gt;//:key=&quot;index&quot;有bug，后面说
+
+//遍历对象
+&lt;ul&gt;
+    &lt;li v-for=&quot;(value,index) in obj&quot; :key=&quot;name&quot;&gt; 
+    属性名:{{name}},属性值:{{value}}
+    &lt;/li&gt;
+&lt;/ul&gt;//：key需要唯一性的值
+</code></pre><h2 id="显示隐藏">显示，隐藏</h2>
+<ul>
+<li>v-show:</li>
+</ul>
+<pre><code>&lt;div v-show=&quot;n % 2 ===0&quot;&gt; n是偶数 &lt;/div&gt;
+</code></pre><ul>
+<li>近似等于：</li>
+</ul>
+<pre><code>&lt;div :style=&quot;{display: n % 2 ===0?'block':'none'}&quot;&gt;n是偶数&lt;/div&gt;
+</code></pre><p>note:</p>
+<p>看的见得元素display不只有block，如table的display为table,li的display为list-item。</p>
 
     </div>
 
@@ -190,7 +258,7 @@ A: 同源策略限制的是数据访问，我们只是引用了CSS，JS和图片
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/>http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/</span>
+                    <a href=http://suixin.monster/template%E6%A8%A1%E6%9D%BF/>http://suixin.monster/template%E6%A8%A1%E6%9D%BF/</span>
             </p>
             
              
@@ -211,10 +279,8 @@ A: 同源策略限制的是数据访问，我们只是引用了CSS，JS和图片
 
     <div class="post-nav">
         
-        <a href="http://suixin.monster/json%E6%B5%85%E6%9E%90/" class="prev" rel="prev" title="JSON浅析"><i class="iconfont icon-left"></i>&nbsp;JSON浅析</a>
+        <a href="http://suixin.monster/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="prev" rel="prev" title="Computed和watch的区别"><i class="iconfont icon-left"></i>&nbsp;Computed和watch的区别</a>
          
-        
-        <a href="http://suixin.monster/%E5%88%9D%E8%AF%86mvc/" class="next" rel="next" title="初识MVC">初识MVC&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

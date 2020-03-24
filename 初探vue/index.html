@@ -9,9 +9,9 @@
   <meta name="description" content="隋鑫的个人网站">
   <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
   
-  
-  <link rel="next" href="http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" />
-  <link rel="canonical" href="http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" />
+  <link rel="prev" href="http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/" />
+  <link rel="next" href="http://suixin.monster/%E6%9C%89%E5%85%B3%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" />
+  <link rel="canonical" href="http://suixin.monster/%E5%88%9D%E6%8E%A2vue/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           开博大吉 | 隋鑫的个人网站
+           初探Vue | 隋鑫的个人网站
        
   </title>
-  <meta name="title" content="开博大吉 | 隋鑫的个人网站">
+  <meta name="title" content="初探Vue | 隋鑫的个人网站">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,20 +44,20 @@
          "@id": "http:\/\/suixin.monster\/"
     },
     "articleSection" : "posts",
-    "name" : "开博大吉",
-    "headline" : "开博大吉",
-    "description" : "隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ ",
+    "name" : "初探Vue",
+    "headline" : "初探Vue",
+    "description" : "Vue 一开始采用了 MVC 框架，V（视图）是 Vue 的重点，M 和 C 则被简化。 Vue 将在 2020 年发布 3.0 版本，过去的 1.0 版本是 MVVM 框架，在 2.0 版本后就不是 MVVM 框架（看似是 MVVM 框架），在 3.0 版本就完全不是 MVVM 框架了。 Vue 完整版与运行时版的区别  Vue 完整版文件名为 vue.js 和 vue.min.js , 后者是压缩版，取消了注释和警告，适合在生产环境下使用。 Vue 运行时版文件名为 vue.runtime.js 和 vue.runtime.min.js， 后者是压缩版，取消了注释和警告，适合在生成环境下使用。  个人建议选择运行时版版，配合 vue-loader 和 vue 文件。 原因：\n 保证用户体验，用户下载的 JS 文件体积更小(小 30%)，但只支持 h 函数。 保证开发体验，开发者可以直接在 vue 文件里写 HTML 标签，而不用写 h 函数。 累活让 vue-loader 来做，vue-loader 把 vue 文件里的 HTML 转为 h 函数。  template 和 render 怎么用 \/\/template (完整版使用) \/\/ 需要编译器 new Vue({ template: \x27\x26lt;div\x26gt;{{ hi }}\x26lt;\/div\x26gt;\x27 }) \/\/render (完整版与运行时版使用) \/\/ 不需要编译器 new Vue({ render (h) { return h(\x27div\x27, this.",
     "inLanguage" : "zh-CN",
     "author" : "隋鑫",
     "creator" : "隋鑫",
     "publisher": "隋鑫",
     "accountablePerson" : "隋鑫",
     "copyrightHolder" : "隋鑫",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-12-13 17:59:01 \x2b0800 CST",
-    "dateModified" : "2019-12-13 17:59:01 \x2b0800 CST",
-    "url" : "http:\/\/suixin.monster\/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89\/",
-    "wordCount" : "2",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-09 23:30:17 \x2b0800 CST",
+    "dateModified" : "2020-03-09 23:30:17 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/%E5%88%9D%E6%8E%A2vue\/",
+    "wordCount" : "120",
     "keywords" : [  "隋鑫的个人网站"]
 }
 </script>
@@ -116,11 +116,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">开博大吉</h1>
+        <h1 class="post-title" itemprop="name headline">初探Vue</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-12-13 itemprop="datePublished">December 13, 2019</time>
+                on <time datetime=2020-03-09 itemprop="datePublished">March 9, 2020</time>
                 </span>
                 in
                 
@@ -142,8 +142,40 @@
           
           
 
-          <h2 id="隋鑫的博客开通了">隋鑫的博客开通了！！！</h2>
-<h3 id="欢迎来到我的博客我会在这给大家分享一些自己学习编程的体会和感悟的">欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！</h3>
+          <h4 id="vue-一开始采用了-mvc-框架v视图是-vue-的重点m-和-c-则被简化">Vue 一开始采用了 MVC 框架，V（视图）是 Vue 的重点，M 和 C 则被简化。</h4>
+<h4 id="vue-将在-2020-年发布-30-版本过去的-10-版本是-mvvm-框架在-20-版本后就不是-mvvm-框架看似是-mvvm-框架在-30-版本就完全不是-mvvm-框架了">Vue 将在 2020 年发布 3.0 版本，过去的 1.0 版本是 MVVM 框架，在 2.0 版本后就不是 MVVM 框架（看似是 MVVM 框架），在 3.0 版本就完全不是 MVVM 框架了。</h4>
+<h2 id="vue-完整版与运行时版的区别">Vue 完整版与运行时版的区别</h2>
+<ol>
+<li>Vue 完整版文件名为 vue.js 和 vue.min.js , 后者是压缩版，取消了注释和警告，适合在生产环境下使用。</li>
+<li>Vue 运行时版文件名为 vue.runtime.js 和 vue.runtime.min.js， 后者是压缩版，取消了注释和警告，适合在生成环境下使用。</li>
+</ol>
+<h4 id="个人建议选择运行时版版配合-vue-loader-和-vue-文件">个人建议选择运行时版版，配合 vue-loader 和 vue 文件。</h4>
+<p>原因：</p>
+<ol>
+<li>保证用户体验，用户下载的 JS 文件体积更小(小 30%)，但只支持 h 函数。</li>
+<li>保证开发体验，开发者可以直接在 vue 文件里写 HTML 标签，而不用写 h 函数。</li>
+<li>累活让 vue-loader 来做，vue-loader 把 vue 文件里的 HTML 转为 h 函数。</li>
+</ol>
+<h2 id="template-和-render-怎么用">template 和 render 怎么用</h2>
+<pre><code>//template (完整版使用)
+// 需要编译器
+new Vue({
+  template: '&lt;div&gt;{{ hi }}&lt;/div&gt;'
+})
+</code></pre><pre><code>//render (完整版与运行时版使用)
+// 不需要编译器
+new Vue({
+  render (h) {
+    return h('div', this.hi)
+  }
+})
+</code></pre><h2 id="使用-codesandboxio-写-vue-代码">使用 codesandbox.io 写 Vue 代码</h2>
+<ol>
+<li><a href="https://codesandbox.io">点击进入 codesandbox.io 主页</a></li>
+<li>在主页选择 create a Sandbox</li>
+<li>然后选择 vue 开始撸代码</li>
+</ol>
+<h4 id="note-sandbox-使用的是运行时版">note: Sandbox 使用的是运行时版</h4>
 
     </div>
 
@@ -158,7 +190,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</span>
+                    <a href=http://suixin.monster/%E5%88%9D%E6%8E%A2vue/>http://suixin.monster/%E5%88%9D%E6%8E%A2vue/</span>
             </p>
             
              
@@ -178,9 +210,11 @@
     </div>
 
     <div class="post-nav">
+        
+        <a href="http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/" class="prev" rel="prev" title="Webpack"><i class="iconfont icon-left"></i>&nbsp;Webpack</a>
          
         
-        <a href="http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" class="next" rel="next" title="HTML入门笔记">HTML入门笔记&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="http://suixin.monster/%E6%9C%89%E5%85%B3%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="next" rel="next" title="有关数据响应式">有关数据响应式&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

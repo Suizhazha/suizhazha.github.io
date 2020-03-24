@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/" />
+  <link rel="next" href="http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/" />
+  <link rel="canonical" href="http://suixin.monster/%E5%88%9D%E8%AF%86mvc/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           初识MVC | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="初识MVC | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "初识MVC",
+    "headline" : "初识MVC",
+    "description" : "每个模块都可以写成三个对象，分别是:\n M-Model(数据模型)负责操作所有数据。  const m = { data: { n: ... }, create() {}, delete() {}, update(data) { ... }, get() {} }  V-View(视图)负责所有 UI 界面。  const v = { html: ` \x26lt;div\x26gt; \x26lt;div\x26gt; \x26lt;span \x26gt;\x26lt;\/span\x26gt; \x26lt;\/div\x26gt; \x26lt;\/div\x26gt; `, render(n) { ... } }  C-Controller(控制器)负责转发请求，对请求进行处理。  const C={ bindEvents(){},\/\/绑定事件 bindEvnetHub(){}\/\/绑定事件中心 } 最后一般会把 C.init 暴露出去作为接口给其他模块调用。\n优缺点：  优点是可以实现代码的模块化管理，各个模块之间互不影响，可以恒定复杂度。 缺点是当有数据改变的时候,render()时很可能是从新渲染整个模块，包括那些没有改变的元素，性能较差。  MVC 引发的一些抽象思维 最小知识原则  一开始写代码，引入一个模块需要引入 html，css，js 后来引入一个模块需要引入 html，js 以后引入一个模块只需要引入 js 即可  优缺点： 在一个页面中需要知道的知识越少越好，模块化为这一点奠定了基础。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-03 22:08:26 \x2b0800 CST",
+    "dateModified" : "2020-03-03 22:08:26 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/%E5%88%9D%E8%AF%86mvc\/",
+    "wordCount" : "247",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">初识MVC</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-03 itemprop="datePublished">March 3, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>每个模块都可以写成三个对象，分别是:</p>
+<ul>
+<li>M-Model(数据模型)负责操作所有数据。</li>
+</ul>
+<pre><code>const m = {
+  data: {
+    n: ...
+  },
+  create() {},
+  delete() {},
+  update(data) {
+    ...
+  },
+  get() {}
+}
+</code></pre><ul>
+<li>V-View(视图)负责所有 UI 界面。</li>
+</ul>
+<pre><code>const v = {
+  html: `
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;span &gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+`,
+  render(n) {
+  ...
+  }
+}
+</code></pre><ul>
+<li>C-Controller(控制器)负责转发请求，对请求进行处理。</li>
+</ul>
+<pre><code>const C={
+    bindEvents(){},//绑定事件
+    bindEvnetHub(){}//绑定事件中心
+}
+</code></pre><p>最后一般会把 C.init 暴露出去作为接口给其他模块调用。</p>
+<h3 id="优缺点">优缺点：</h3>
+<ol>
+<li>优点是可以实现代码的模块化管理，各个模块之间互不影响，可以恒定复杂度。</li>
+<li>缺点是当有数据改变的时候,render()时很可能是从新渲染整个模块，包括那些没有改变的元素，性能较差。</li>
+</ol>
+<h2 id="mvc-引发的一些抽象思维">MVC 引发的一些抽象思维</h2>
+<h3 id="最小知识原则">最小知识原则</h3>
+<ul>
+<li>一开始写代码，引入一个模块需要引入 html，css，js</li>
+<li>后来引入一个模块需要引入 html，js</li>
+<li>以后引入一个模块只需要引入 js 即可</li>
+</ul>
+<h4 id="优缺点-1">优缺点：</h4>
+<p>在一个页面中需要知道的知识越少越好，模块化为这一点奠定了基础。</p>
+<p>同样这么做页面一开始其实是空白的，没有内容和样式。</p>
+<h4 id="解决方法">解决方法：</h4>
+<ol>
+<li>添加 loading 图片</li>
+<li>添加骨架</li>
+<li>添加占位内容（加载中等等）</li>
+<li>SSR 技术，但没必要</li>
+</ol>
+<h2 id="关于表驱动编程">关于表驱动编程</h2>
+<p>表驱动方法(Table-Driven Approach)是一种使你可以在表中查找信息，而不必用很多的逻辑语句（if 或 case）来把它们找出来的方法。事实上，任何信息都可以通过表来挑选。在简单的情况下，逻辑语句往往更简单而且更直接。</p>
+<p>简单讲是指用查表的方法获取值。 我们平时查字典就是典型的表驱动法。</p>
+<h3 id="数组中的应用">数组中的应用：</h3>
+<p>例如可以返回每个月中天数的函数（为简单起见不考虑闰年）</p>
+<ul>
+<li>
+<p>使用 if&hellip;else&hellip;</p>
+<pre><code>function iGetMonthDays(iMonth) {
+  let iDays;
+  if(1 == iMonth) {iDays = 31;}
+  else if(2 == iMonth) {iDays = 28;}
+  else if(3 == iMonth) {iDays = 31;}
+  else if(4 == iMonth) {iDays = 30;}
+  else if(5 == iMonth) {iDays = 31;}
+  else if(6 == iMonth) {iDays = 30;}
+  else if(7 == iMonth) {iDays = 31;}
+  else if(8 == iMonth) {iDays = 31;}
+  else if(9 == iMonth) {iDays = 30;}
+  else if(10 == iMonth) {iDays = 31;}
+  else if(11 == iMonth) {iDays = 30;}
+  else if(12 == iMonth) {iDays = 31;}
+  return iDays;
+}
+</code></pre></li>
+<li>
+<p>使用表驱动(包括闰年判断)</p>
+<pre><code>const monthDays = [
+  [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+  [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+]
+function getMonthDays(month, year) {
+  let isLeapYear = (year % 4 === 0) &amp;&amp; (year % 100 !== 0 || year % 400 === 0) ? 1 : 0
+  return monthDays[isLeapYear][(month - 1)];
+}
+console.log(getMonthDays(2, 2000))
+</code></pre></li>
+<li>
+<p>可以看出：</p>
+<p>在数值不多的时候我们可以用逻辑语句(if 或 case)的方法来获取值,但随着数值的增多逻辑语句就会越来越长,此时表驱动法的优势就显现出来了。</p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/%E5%88%9D%E8%AF%86mvc/>http://suixin.monster/%E5%88%9D%E8%AF%86mvc/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F/" class="prev" rel="prev" title="关于跨域"><i class="iconfont icon-left"></i>&nbsp;关于跨域</a>
+         
+        
+        <a href="http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/" class="next" rel="next" title="Webpack">Webpack&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

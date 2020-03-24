@@ -6,10 +6,42 @@
     <description>Recent content in Posts on 隋鑫的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Mar 2020 16:06:02 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 23:08:43 +0800</lastBuildDate>
     
 	<atom:link href="http://suixin.monster/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Template模板</title>
+      <link>http://suixin.monster/template%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Fri, 20 Mar 2020 23:08:43 +0800</pubDate>
+      
+      <guid>http://suixin.monster/template%E6%A8%A1%E6%9D%BF/</guid>
+      <description>Vue模板使用XML语法，使用{{}}插入表达式，使用v-html，v-on， v-bind等指令操作DOM，使用v-if，v-for等指令实现条件判断和循环。
+展示内容   表达式:
+  {{ object.a }} 表达式
+  {{ n+1 }} 任何运算(不支持 if else)
+  {{ fn(n) }} 调用函数
+  若值为undefined 或者 null 就不显示
+  另一种写法&amp;lt;div v-text=&amp;quot;表达式&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;可代替{{}}
+    HTML内容:
+若 data.x 的值为&amp;lt;strong&amp;gt;hi&amp;lt;/strong&amp;gt;
+则&amp;lt;div v-html=&amp;quot;x&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;即可显示粗体的hi。
+  展示{{ n }}
+&amp;lt;div v-pre&amp;gt;{{ n }} &amp;lt;/div&amp;gt;
+v-pre 不会对模板进行编译
+  绑定属性  绑定src  &amp;lt;img v-bind:src=&amp;quot;x&amp;quot; /&amp;gt; 可简写为: &amp;lt;img :src=&amp;quot;x&amp;quot; /&amp;gt;  绑定对象  //绑定内联事件 &amp;lt;div :style = &amp;quot;{border: &#39;1px&#39; solid red,height:100}&amp;quot;&amp;gt; &amp;lt;/div&amp;gt;//100px可以写成100，但100em不行 绑定事件  v-on：事件名  //只写函数名，点击之后，Vue会运行add() &amp;lt;button v-on:click= &amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;button&amp;gt; //函数名后加参数，点击之后，Vue会运行xxx(1) &amp;lt;button v-on:click= &amp;quot;xxx(1)&amp;quot;&amp;gt;xxx&amp;lt;button&amp;gt; //直接写可执行代码，点击之后，Vue会运行n+=1 &amp;lt;button v-on:click= &amp;quot;n+=1&amp;quot;&amp;gt;xxx&amp;lt;button&amp;gt;  缩写!</description>
+    </item>
+    
+    <item>
+      <title>Computed和watch的区别</title>
+      <link>http://suixin.monster/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Thu, 19 Mar 2020 22:20:09 +0800</pubDate>
+      
+      <guid>http://suixin.monster/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description> computed：计算属性，用来计算出一个值。  调用时不需要加括号 根据依赖自动缓存，依赖不变的话，computed的值不会重新计算   watch：用来监听的，如果某个属性变化了，就去执行一个函数。   两个选项：
+ immediate:表示是否要在第一个渲染时执行这个函数。 deep:表示如果要监听一个对象，是否要看对象里面的属性的变化。      </description>
+    </item>
     
     <item>
       <title>有关数据响应式</title>
@@ -19,6 +51,36 @@
       <guid>http://suixin.monster/%E6%9C%89%E5%85%B3%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</guid>
       <description>git
 ## 数据响应式 Vue基本不用手动操作 dom，data 中声明的数据状态改变后会自动重新渲染相关的 dom。 换句话说就是 Vue 自己知道哪个数据状态发生了变化及哪里有用到这个数据需要随之修改。 ### 关于数据响应式的问题 - 怎样知道数据发生了变化？ Vue3 之前使用了 ES5 的一个 API Object.defineProperty Vue3 中使用了 ES6 的 Proxy，都是对需要侦测的数据进行 变化侦测 ，添加 getter 和 setter ，这样就可以知道数据何时被读取和修改。 - 怎样知道数据变化后哪里需要修改？ Vue 对于每个数据都收集了与之相关的 依赖 ，这里的依赖其实就是一个对象，保存有该数据的旧值及数据变化后需要执行的函数。每个响应式的数据变化时会遍历通知其对应的每个依赖，依赖收到通知后会判断一下新旧值有没有发生变化，如果变化则执行回调函数响应数据变化（比如修改 dom）。 ## object.Defineproperty ``` Object.defineProperty(obj, prop, descriptor) ``` - 参数说明： obj：必需。目标对象 prop：必需。需定义或修改的属性的名字 descriptor：必需。目标属性所拥有的特性 - 返回值： 传入函数的对象。即第一个参数obj 针对属性，我们可以给这个属性设置一些特性，比如是否只读不可以写；是否可以被for..in或Object.keys()遍历。 给对象的属性添加特性描述，目前提供两种形式：数据描述和存取器描述。 这个属性一般是已经定义完却还想加属性的时候用 ## 关于getter/setter ``` let obj0 = { 姓: &amp;quot;高&amp;quot;, 名: &amp;quot;圆圆&amp;quot;, age: 18 }; let obj1 = { 姓: &amp;quot;高&amp;quot;, 名: &amp;quot;圆圆&amp;quot;, 姓名() { return this.</description>
+    </item>
+    
+    <item>
+      <title>初探Vue</title>
+      <link>http://suixin.monster/%E5%88%9D%E6%8E%A2vue/</link>
+      <pubDate>Mon, 09 Mar 2020 23:30:17 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%88%9D%E6%8E%A2vue/</guid>
+      <description>Vue 一开始采用了 MVC 框架，V（视图）是 Vue 的重点，M 和 C 则被简化。 Vue 将在 2020 年发布 3.0 版本，过去的 1.0 版本是 MVVM 框架，在 2.0 版本后就不是 MVVM 框架（看似是 MVVM 框架），在 3.0 版本就完全不是 MVVM 框架了。 Vue 完整版与运行时版的区别  Vue 完整版文件名为 vue.js 和 vue.min.js , 后者是压缩版，取消了注释和警告，适合在生产环境下使用。 Vue 运行时版文件名为 vue.runtime.js 和 vue.runtime.min.js， 后者是压缩版，取消了注释和警告，适合在生成环境下使用。  个人建议选择运行时版版，配合 vue-loader 和 vue 文件。 原因：
+ 保证用户体验，用户下载的 JS 文件体积更小(小 30%)，但只支持 h 函数。 保证开发体验，开发者可以直接在 vue 文件里写 HTML 标签，而不用写 h 函数。 累活让 vue-loader 来做，vue-loader 把 vue 文件里的 HTML 转为 h 函数。  template 和 render 怎么用 //template (完整版使用) // 需要编译器 new Vue({ template: &#39;&amp;lt;div&amp;gt;{{ hi }}&amp;lt;/div&amp;gt;&#39; }) //render (完整版与运行时版使用) // 不需要编译器 new Vue({ render (h) { return h(&#39;div&#39;, this.</description>
+    </item>
+    
+    <item>
+      <title>Webpack</title>
+      <link>http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/</link>
+      <pubDate>Sun, 08 Mar 2020 21:55:01 +0800</pubDate>
+      
+      <guid>http://suixin.monster/webpack-loader%E5%92%8Cwebpack-plugin/</guid>
+      <description>webpack loader v.s webpack plugin  英文翻译   loader 加载器 plugin 插件   中文翻译   loader 用来加载文件，例如： babel loader 用来加载 JS 文件,将高版本 JS 转译成低版本的 JS，style/css loader 用来加载 CSS 文件引入到 JS 中，并转为页面中的 style 标签插入到 head 标签里。 plugin 用来扩展 webpack 功能，例如： MiniCssExtractPlugin 将 CSS 代码提取成单独的文件，HtmlWebpackPlugin 可以自动生成 HTML 。  </description>
+    </item>
+    
+    <item>
+      <title>初识MVC</title>
+      <link>http://suixin.monster/%E5%88%9D%E8%AF%86mvc/</link>
+      <pubDate>Tue, 03 Mar 2020 22:08:26 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%88%9D%E8%AF%86mvc/</guid>
+      <description>每个模块都可以写成三个对象，分别是:
+ M-Model(数据模型)负责操作所有数据。  const m = { data: { n: ... }, create() {}, delete() {}, update(data) { ... }, get() {} }  V-View(视图)负责所有 UI 界面。  const v = { html: ` &amp;lt;div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;span &amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; `, render(n) { ... } }  C-Controller(控制器)负责转发请求，对请求进行处理。  const C={ bindEvents(){},//绑定事件 bindEvnetHub(){}//绑定事件中心 } 最后一般会把 C.init 暴露出去作为接口给其他模块调用。
+优缺点：  优点是可以实现代码的模块化管理，各个模块之间互不影响，可以恒定复杂度。 缺点是当有数据改变的时候,render()时很可能是从新渲染整个模块，包括那些没有改变的元素，性能较差。  MVC 引发的一些抽象思维 最小知识原则  一开始写代码，引入一个模块需要引入 html，css，js 后来引入一个模块需要引入 html，js 以后引入一个模块只需要引入 js 即可  优缺点： 在一个页面中需要知道的知识越少越好，模块化为这一点奠定了基础。</description>
     </item>
     
     <item>
@@ -40,6 +102,29 @@ JSONP 在跨域时，因为某些条件，当前浏览器不支持 CORS，必须
 优点：
  兼容 IE 可以跨域  缺点：
  由于是 script 标签，所以他读不了 AJAX 那么精确(不知道状态码和响应头)，只知道成功和失败。 由于是 script 标签，只能发 get 请求，即 JSONP 不支持 post。  </description>
+    </item>
+    
+    <item>
+      <title>JSON浅析</title>
+      <link>http://suixin.monster/json%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Thu, 20 Feb 2020 16:06:35 +0800</pubDate>
+      
+      <guid>http://suixin.monster/json%E6%B5%85%E6%9E%90/</guid>
+      <description>JSON 中文文档,看铁轨图!!! 支持的数据类型  string：只支持双引号，不支持单引号和无引号 number：支持科学记数法 bool：true 和 false null：没有 undefined object array  Notes:
+ 不支持函数和变量，也不支持引用。 其实 JSON 就是借鉴了 JS。  window.JSON  JSON.parse  将符合 JSON 语法的字符串转换成 HS 对应类型的数据，若不符合 JSON 语法，则抛出一个 Error 对象，一半用 try catch 捕获错误。
+ JSON.stringify  JSON.parse 的逆运算，由于 JS 数据类型比 JSON 多，所以不一定成功，失败同样抛出一个 Error 对象。</description>
+    </item>
+    
+    <item>
+      <title>AJAX原理</title>
+      <link>http://suixin.monster/ajax%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 20 Feb 2020 16:06:02 +0800</pubDate>
+      
+      <guid>http://suixin.monster/ajax%E5%8E%9F%E7%90%86/</guid>
+      <description>AJAX：Asynchronous JavaScript and XML 异步的 JavaScript 与 XML 技术），即使用 JS 发送请求和接收响应。
+AJAX 原理  步骤：  创建 HttpRequest 对象(XMLHttpRequest()) 调用对象的 open 方法（查看 mdn,只用 method 和 url，后面的参数都不用） 监听对象的 onload 和 onerror 事件  专业前端会改用 onreadystatechange 在事件处理函数里操作相应文件内容   调用对象的 send 方法(发送请求)    例如：
+加载 HTML
+ getHTML.onclick = () =&amp;gt; { const request = new XMLHttpRequest() request.open(&#39;GET&#39;, &#39;/1.html&#39;)//read state = 1 request.onreadystatechange = () =&amp;gt; { //2xx一般表示成功 if (request.readyState === 4) { if (request.</description>
     </item>
     
     <item>
@@ -118,6 +203,70 @@ Math.max(2,3)//3 Math.max.call(null,2,3)//3 Math.max.apply(null,[2,3])//3 除了
     </item>
     
     <item>
+      <title>JS运算符</title>
+      <link>http://suixin.monster/js%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <pubDate>Mon, 03 Feb 2020 21:00:25 +0800</pubDate>
+      
+      <guid>http://suixin.monster/js%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <description>算数运算符  number 运算   加减乘除  余数  -1 % 7的余数为 -1//提个负号，加 1 % 7的余数 //正常数学-1 % 7=== 6 % 7 的余数 指数  7 ** 2 //49 7 ** 3 //343 自增自减  a++//a在前，值为前 ++a//a在后，值为后 求值运算符  var a = 8 +a //8,＋号后面取任何数，都是取这个数的值 var a = - 8 +a //-8 负数运算符  var a = - 8 -a //8,正数变负数，负数变正数 string 运算符  连接运算  &#39;1&#39;+&#39;2&#39; //&amp;quot;12&amp;quot;,只支持加号 js 独有：</description>
+    </item>
+    
+    <item>
+      <title>JS函数</title>
+      <link>http://suixin.monster/js%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sat, 01 Feb 2020 23:57:11 +0800</pubDate>
+      
+      <guid>http://suixin.monster/js%E5%87%BD%E6%95%B0/</guid>
+      <description>函数是一种特殊的对象
+定义一个函数  具名函数  function 函数名(形参1，形参2){ 语句 return 返回值 }  匿名函数（去掉函数名）  let a =function(x,y){ return x+y }//也叫函数表达式 note：
+let a =function fn(x,y){ return x+y } fn(1,2)//会报错，因为fn函数在等号右边，则作用域范围只在等号右边  箭头函数  let f1 = x =&amp;gt;x*x//箭头左边为输入，右边为输出 f1(9)//输出81 let f2 = (x，y) =&amp;gt; x*y//若箭头左边有两个输入参数，需要括号括起来 f2(8,9)//输出72 let f3 = (x，y) =&amp;gt; { console.log(&#39;hi&#39;) return x*y }//若箭头右边有多个语句，必须加花括号和return 返回值 let f4 = x =&amp;gt;({ name:x })//若要在箭头右边直接返回一个对象，需要加括号  构造函数（很少用）  let fn1 = new function(&#39;x&#39;，&#39;y&#39;, &#39;console.</description>
+    </item>
+    
+    <item>
+      <title>JS数组</title>
+      <link>http://suixin.monster/js%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Fri, 31 Jan 2020 15:10:34 +0800</pubDate>
+      
+      <guid>http://suixin.monster/js%E6%95%B0%E7%BB%84/</guid>
+      <description>JS 数组 一种特殊的对象，JS 其实没有真正的数组，只是用对象模拟数组。
+ 元素的数据类型可以不同。 内存不一定是连续的（因为对象是随机存储的）。 不能通过数字下标，而是通过字符串下标。 意味着数组可以有任何 key。  创建数组  新建  let arr=[1,2,3] let arr=new Array(1,2,3) let arr=new Array(3)//数组长度为3  转化  let arr=&#39;1,2,3&#39; arr.split(&#39;,&#39;)//使用字符串创建数组 或 let arr=&#39;123&#39; arr.split(&#39;&#39;) Array.from(&#39;123&#39;)//存在下标和length的对象，可以转化为数组  伪数组  let divList=document.querySelector(&#39;div&#39;) notes：
+ 伪数组的原型链中没有数组的原型。 没有数组共用属性的数组就是伪数组。   合并两个数组  arr1.concat(arr2)//返回新的数组，不会影响arr1，arr2的值  截取数组的一部分  arr1.slice(1)//从第二个元素开始截取，不会改变原数组arr1的值 arr2.slice(0)//全部截取 note：JS 只提供浅拷贝
+数组中元素的增删改查   删除元素
+ 跟删除对象一样的方式，不推荐  let arr=[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;] delete arr[&#39;0&#39;]//数组长度不会变，JS设计问题 let arr=[1,2,3,4,5] arr.length=1//修改length可以删除元素，但不要随便修改length  正规删除元素的方式  删除头部元素 arr.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript对象</title>
+      <link>http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Mon, 27 Jan 2020 21:13:53 +0800</pubDate>
+      
+      <guid>http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/</guid>
+      <description>对象 object 唯一复杂数据类型
+  定义
+ 无序的数据集合 键值对（name 是键，frank 是值，组成了一对键值对）的集合    写法
+1. let obj={&#39;name&#39;:&#39;frank&#39;,&#39;age&#39;:18} //name，age 只能是字符串，就算引号删掉，也还是字符串 2. let obj=new Object({name&#39;:&#39;frank&#39;}) //正规写法，上面是简单写法 3. console.log({&#39;name&#39;:&#39;frank&#39;,&#39;age&#39;:18}) //匿名字符串   notes：
+ 键名 key 是字符串，不是标识符（标识符不能以数字开头的，键名可以用数字），可以包含任意字符（空字符串、空格字符串也合法） 引号可省略，省略之后只能写标识符，但中文、空格需要加引号。 就算引号省略了，键名也还是字符串！ 每一个 key 都是对象的属性名，name 是属性名，每一个 value 都是对象的属性值，frank 是属性值。    奇怪的属性名
+  所有属性名会自动变成字符串
+ let obj={ 1:&#39;a&#39;, 3.2:&#39;b&#39;, 1e2:true, 1e-2:true, .234:true, 0xFF:true } Object.key(obj) =&amp;gt;[&amp;quot;1&amp;quot;,&amp;quot;100&amp;quot;,&amp;quot;255&amp;quot;,&amp;quot;3.2&amp;quot;,&amp;quot;0.01&amp;quot;,&amp;quot;0.234&amp;quot;] //Object.key(obj)为打出所有的键名（key）  变量做属性名  notes：  使用变量的值作为 key，需要加[]。 不加[]的属性名会自动变成字符串。 值如果不是字符串，则自动变成字符串。  对象的隐藏属性： JS 中每一个对象都有一个隐藏属性,这个隐藏属性储存着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,即隐藏属性储存着原型的地址。例如：</description>
+    </item>
+    
+    <item>
+      <title>JS变量声明，数据类型和类型转换</title>
+      <link>http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Sun, 26 Jan 2020 21:00:42 +0800</pubDate>
+      
+      <guid>http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid>
+      <description>推荐阅读：《我用了两个月的时间才理解 let》 变量声明 三种声明方式：
+  var a = 1
+var 过时，不好用。
+  let a = 1
+let 新的，更合理，用于变量声明。
+  const a = 1
+const 声明必须赋值，不可更改，用于常量声明。
+  let 声明：  遵循块作用域，使用范围不超过{}。 不能重复声明。 可以赋值也可不赋值。 先声明后使用，否则报错。 全局声明的 let 变量，不会变成 window 的属性，但是 var 可以。 for 循环配合 let 有奇效（面试题）。  const 声明：  规则几乎跟 let 一样。 声明时就要赋值，且赋值后不能更改（只读变量，即常量）。 无法和 for 配合，因为值不可改。  note：变量声明的时候，既指定了值，也指定了类型。 JS 数据类型   数字 number： 64 位浮点数存储一个 number，其中符号占 1 位，指数占 11 位（-1023~1024），有效数字占 52 位（省略开头的 1）。</description>
+    </item>
+    
+    <item>
       <title>系统学习HTTP</title>
       <link>http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/</link>
       <pubDate>Fri, 24 Jan 2020 21:28:20 +0800</pubDate>
@@ -128,6 +277,35 @@ Notes：
  请求格式主要分为：请求行，请求头，请求体。 请求动词有：GET（获取）/POST（上传）/PUT/PATCH/DELETE 等。 请求体在 GET 请求中一般为空。 具体文档RFC 2612 第五章 大小写随意。   响应  协议名/版本 状态码（默认200） 状态字符串 //以上为状态行 Content-Type：响应体格式（其他一般不用管） //以上为响应头 //响应头和响应体体中间要加一个回车 响应体（即下载内容） 例如：
 Notes：
  响应格式分为状态行，响应头，响应体。 常见的状态码是考点。 文档在RFC 2612 第六章  </description>
+    </item>
+    
+    <item>
+      <title>JavaScript语法</title>
+      <link>http://suixin.monster/javascript%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Mon, 20 Jan 2020 23:54:36 +0800</pubDate>
+      
+      <guid>http://suixin.monster/javascript%E8%AF%AD%E6%B3%95/</guid>
+      <description>推荐书籍：  你不知道的 JavaScript（先买上卷，适合进阶） 阮一峰的免费教程 网道  表达式   1+2 表达式的值为 3。
+  add(1,2）表达式的值为函数的返回值。
+note：值和返回值不一样，只有函数才有返回值。
+  console.log 表达式的值为函数本身。
+  console.log(3)表达式的值为 undefined，但会打印出来 3。
+  语句  var a = 1 是一个语句  Notes：
+ 表达式一般都有值，语句可能有值，也可能没有。 语句一般会改变环境（声明、赋值）。 上面两句并不绝对。  JS 区分大小写，例如：  var a和var A object和Object function和Function都是不同的含义  空格和回车 只要不影响断句，空格没有实际意思，回车大部分一样没有实际意思。
+但 return 后不能加回车，否则会返回一个 undefined！！！ 标识符 变量名，第一个字符可以是 Unicode 字母，$,下划线或者中文。
+注释 / xxx /只能注释一行，而/_ xxx _/可以注释多行。
+ 不好的注释：将代码翻译成中文的注释，无用过时的注释，发泄不满的注释。 好的注释：踩坑的注释，奇怪的代码和 bug 注释。  block 区块 { let a = 1; let b = 2; }  常与 if，for 和 while 一起用。</description>
+    </item>
+    
+    <item>
+      <title>JavaScrip历史及设计缺陷总结</title>
+      <link>http://suixin.monster/javascrip%E5%8E%86%E5%8F%B2%E5%8F%8A%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 17 Jan 2020 23:26:49 +0800</pubDate>
+      
+      <guid>http://suixin.monster/javascrip%E5%8E%86%E5%8F%B2%E5%8F%8A%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7%E6%80%BB%E7%BB%93/</guid>
+      <description>JS 的起源（始于网景） 1993 年，伊利诺伊大学厄巴纳-尚佩恩分校的国家超级电脑应用中心（NCSA）发表了 NCSA Mosaic，这是最早流行的图形接口网页浏览器，它在万维网的普及上发挥了重要作用。1994 年，一家名为 Mosaic Communications 的公司在加州芒廷维尤成立了，并雇用了许多原来的 NCSA Mosaic 开发者用来开发 Mosaic Netscape，该公司的目标是取代 NCSA Mosaic 成为世界第一的网页浏览器。第一个版本的网页浏览器 Mosaic Netscape 0.9 于 1994 年底发布。在四个月内，已经占据了四分之三的浏览器市场，并成为 1990 年代互联网的主要浏览器。为避免 NCSA 的商标所有权问题，该浏览器于同年更名为 Netscape Navigator，该公司命名为 Netscape Communications。网景预见到网络需要变得更动态。公司的创始人马克·安德森认为 HTML 需要一种胶水语言，让网页设计师和兼职程序员可以很容易地使用它来组装图片和插件之类的组件，且代码可以直接编写在网页标记中。
+1995 年，网景招募了布兰登·艾克，目标是把 Scheme 语言嵌入到 Netscape Navigator 浏览器当中。但更早之前，网景已经跟昇阳合作在 Netscape Navigator 中支持 Java，这时网景内部产生激烈的争论。后来网景决定发明一种与 Java 搭配使用的辅助脚本语言并且语法上有些类似，这个决策导致排除了采用现有的语言，例如 Perl、Python、Tcl 或 Scheme。为了在其他竞争提案中捍卫 JavaScript 这个想法，公司需要有一个可以运作的原型。艾克在 1995 年 5 月仅花了十天时间就把原型设计出来了。
+最初命名为 Mocha，1995 年 9 月在 Netscape Navigator 2.0 的 Beta 版中改名为 LiveScript，同年 12 月，Netscape Navigator 2.</description>
     </item>
     
     <item>
@@ -143,6 +321,63 @@ Notes：
 几个特殊的 IP  127.0.0.1 表示自己。 localhost 通过 hosts 指定为自己。 0.0.0.0 不表示任何设备。  hosts 文件 Windows 系统中，hosts 位于 C:\Windows\System32\drivers\etc\hosts 。在 macOS / Linux 系统中，hosts 位于 /etc/hosts。
 端口 Port 一台机器可以提供不同服务。
  要提供 HTTP 服务最好使用 80 端口。 要提供 HTTPS 服务最好使用 433 端口。 要提供 FTP 服务最好使用 21 端口。 一共有 65535 个端口。（基本上够用）  端口规则   0 到 1023 号端口是留给系统使用的，拥有了管理员权限后，才能使用 0-1023 号端口。</description>
+    </item>
+    
+    <item>
+      <title>CSS知识总结</title>
+      <link>http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 13 Jan 2020 22:01:29 +0800</pubDate>
+      
+      <guid>http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>浏览器渲染过程：   根据 HTML 构建 HTML 树（DOM）
+ 文档对象模型(DOM)是 HTML 和 XML 文档的编程接口，它会将 web 页面和脚本或程序语言连接起来。    根据 CSS 构建 CSS 树（CSSOM）
+ CSS 对象模型 (CSS Object Model, CSSOM) 是一个存放所有 CSS 选择器与相关特性的树状结构容器，拥有根节点、邻居节点、后代节点、子代节点以及其他关系。 CSSCOM 非常类似于 DOM 文件对象模型 。    将两棵树合并成一颗渲染树（render tree）
+  Layout 布局（文档流，盒模型，计算大小和位置）
+  Paint 绘制（将边框颜色，文字颜色，阴影等画出来）
+  Compose 合成（根据层叠关系展示画面）
+  如何更新样式： 一般用 JS 更新样式：
+ div.style.background=&#39;red&amp;rsquo; div.style.display=&#39;none&amp;rsquo; div.classList.add(&amp;lsquo;red&amp;rsquo;)（加样式不如加类）  三种渲染方式和更新方式：  JS/CSS&amp;gt;样式&amp;gt;布局&amp;gt;绘制&amp;gt;合成   例如div.</description>
+    </item>
+    
+    <item>
+      <title>CSS布局和定位</title>
+      <link>http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/</link>
+      <pubDate>Fri, 10 Jan 2020 19:54:28 +0800</pubDate>
+      
+      <guid>http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/</guid>
+      <description>布局是什么： 把页面分成一块一块，按左中右，上中下等排列。
+布局分类:  固定宽度布局，例如淘宝网， 一般宽度 960/1000/1024px。 不固定宽度布局，例如手机端，主要靠文档流原理布局。 文档流本身就是自适应的，不需要额外添加样式。 响应式布局，pc 上固定宽度，手机上不固定宽度，是一种混合布局。  布局思路：  从大到小:先定大局，再完善每个小布局。 从小到大:先完成小布局，再组合成大布局，推荐新手。   三种布局套路：   float 布局：
+1. 子元素上加float：left和width。 2. 在父元素上加.clearfix。 例如： ![](https://user-gold-cdn.xitu.io/2020/1/7/16f801aab2022468?w=1279&amp;amp;h=699&amp;amp;f=png&amp;amp;s=116392)  Notes：
+  有时最后一个元素不加 width，留些空间，可加上最大宽度max-width：100px；若加上 width 会出现下图情况:   不需要做响应式，float 布局专为 IE 准备。
+  解决 IE6/7 存在双倍 margin 的 bug，
+ 1. 针对IE6/7，把margin减半，如下图，则IE上显示5px乘2，正常浏览器上显示10px：  2. 加一个 display：inline-block； - 若图片下有多余的东西： 添加 vertical-align: top; 或者vertical-align: middle;   有时 border 调试会干扰 width，可用 outline 调试。</description>
+    </item>
+    
+    <item>
+      <title>CSS基础</title>
+      <link>http://suixin.monster/css%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 06 Jan 2020 16:40:06 +0800</pubDate>
+      
+      <guid>http://suixin.monster/css%E5%9F%BA%E7%A1%80/</guid>
+      <description>今天在谷里学习了 css 基础知识，结合维基百科和 mdn，写下此博客跟大家分享，如有错误之处，欢迎指正（没有奖励 😝）。 目录：  css 历史 体系化学习 文档流 盒模型   css 历史 css：中文为层叠样式表（又称串样式列表、级联样式表、串接样式表、阶层式样式表）是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，由 W3C 定义和维护。当前使用最广泛的版本是 CSS2.1，为 W3C 的推荐标准。CSS3 现在已被大部分现代浏览器支持，而下一版的 CSS4 仍在开发中。1994 年，哈肯·维姆·莱提出了 CSS 的最初建议。
+层叠:
+ 样式层叠：可以多次对同一选择器进行样式声明。 选择器层叠：可以用不同选择器对同一个元素进行样式声明。 文件层叠：可以用多个文件进行层叠。  note：这些特性使得 css 极度灵活，也为 css 被吐槽留下了隐患。
+目前 CSS2.1 为使用最广泛的版本（IE 支持），CSS3 为最新版本（IE8 部分支持）。 使用 caniuse.com 检查各种浏览器支持哪些特性。
+ 体系化学习 怎样学习一门语言：   语法（怎样写代码）
+  语法 1：样式语法
+ 选择器{ 属性名:属性值; /*注释*/ }  Notes：
+ 所有符号都是英文符号。 区分大小写。 没有//注释 最后一个分号可省略，但建议不要省略。 任何一个地方写错了，都不会报错，浏览器会忽略。 若想知道写错，    语法 2:@语法</description>
+    </item>
+    
+    <item>
+      <title>HTML重点标签</title>
+      <link>http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Fri, 03 Jan 2020 22:14:28 +0800</pubDate>
+      
+      <guid>http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/</guid>
+      <description>最近两天看了饥人谷的 HTML 网课，结合 mdn 文档写了篇博客，分享给大家。如有错误之处，欢迎指正！（没有奖励 😝）
+a 标签 &amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+ 属性：  href：超链接 target：打开超链接窗口方式 （http-server -c-1 或着 parcel+文件名来打开 vscode 网址） download 下载网页（很多浏览器不支持） rel=noopener（防止一个 bug，以后会讲）   a 的 href 取值：  网址：  https://网址 http://网址 //网址（最高级，推荐。查看：开发者工具，勾选 preserve log,浏览器自动补全跳转）   路径  /a/b/c 以及 a/b/c（当前目录下查找） index.com 以及./index.com（都是当前目录下查找）   伪协议  Javascript:;&amp;lt;a href=&amp;quot;Javascript:;&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;为了直接执行 js，现在常作点击之后无动作的 a 标签） mailto:邮箱&amp;lt;a href=&amp;quot;mailto:573505403@qq.com&amp;quot;&amp;gt;&amp;lt;/a&amp;gt; tel:手机号（简历用）&amp;lt;a href=&amp;quot;tel:17853318194&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;   id :&amp;lt;a href=&amp;quot;#xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;（内部锚点，跳转到指定标签位置）   a 的 targe 取值：  内置名字：  _blank（在新窗口打开） _self（在当前窗口打开） _top（在最顶层窗口打开） _parent（在父级窗口打开） xxx（有 xxx 窗口就使用，没有就在新窗口打开就命名新窗口为 xxx，多链接看效果）     iframe 标签： 内嵌窗口，已经很少使用，现在都用 ajax 方式。</description>
     </item>
     
     <item>
@@ -164,6 +399,23 @@ echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
  5.启动 Hugo 服务器 hugo server -D
  6.建立静态页面 hugo -D 自动创建一个 public 目录。
 7.上传至 github   在 vscode 新建一个.</description>
+    </item>
+    
+    <item>
+      <title>HTML入门笔记</title>
+      <link>http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 01 Jan 2020 21:59:13 +0800</pubDate>
+      
+      <guid>http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>大家好，上星期在饥人谷学习了 HTML 的历史概述，语法和一些常用标签。前几天因为收拾东西回家，此笔记一直没有写完。今天整理完成后分享给大家，如有错误之处，欢迎指正！（没有奖励 😝）  首先是关于 HTML 的历史: HTML（英文：HyperText Markup Language，中文：超文本标记语言）由英国计算机科学家 Timothy John Berners-Lee 创立，同时他也是万维网的发明者。而万维网（WWW）包括了 URL，HTML 以及 HTTP，本篇只简单介绍下 HTML。
+ HTML 起手式 !+tab键即可出现下图代码；  其中&amp;lt;!DOCTYPE html&amp;gt; 为文档类型
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; html 标签，可改 zh-cn
+而 head 标签内为看不到的元素。
+&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt; 字符编码
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot; /&amp;gt; 为防止页面缩放，用于兼容手机。
+&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;ie=edge&amp;quot; /&amp;gt; 可要求 Ie 升级到最新内核（11）
+&amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; 为标题
+ 章节标签  标题 h1~h6 章节 section 文章 article 段落 p 头部 header 脚部 footer 主要 main 旁支 aside 划分 div   全局属性   class：类(class 找元素非常不方便)，推荐：   contenteditable，可以让所有元素可编辑。&amp;lt;div class=&amp;quot;middle bordered&amp;quot; contenteditable&amp;gt;</description>
     </item>
     
     <item>

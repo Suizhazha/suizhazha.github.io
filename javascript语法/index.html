@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/javascrip%E5%8E%86%E5%8F%B2%E5%8F%8A%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7%E6%80%BB%E7%BB%93/" />
+  <link rel="next" href="http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/" />
+  <link rel="canonical" href="http://suixin.monster/javascript%E8%AF%AD%E6%B3%95/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JavaScript语法 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="JavaScript语法 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "JavaScript语法",
+    "headline" : "JavaScript语法",
+    "description" : "推荐书籍：  你不知道的 JavaScript（先买上卷，适合进阶） 阮一峰的免费教程 网道  表达式   1\x2b2 表达式的值为 3。\n  add(1,2）表达式的值为函数的返回值。\nnote：值和返回值不一样，只有函数才有返回值。\n  console.log 表达式的值为函数本身。\n  console.log(3)表达式的值为 undefined，但会打印出来 3。\n  语句  var a = 1 是一个语句  Notes：\n 表达式一般都有值，语句可能有值，也可能没有。 语句一般会改变环境（声明、赋值）。 上面两句并不绝对。  JS 区分大小写，例如：  var a和var A object和Object function和Function都是不同的含义  空格和回车 只要不影响断句，空格没有实际意思，回车大部分一样没有实际意思。\n但 return 后不能加回车，否则会返回一个 undefined！！！ 标识符 变量名，第一个字符可以是 Unicode 字母，$,下划线或者中文。\n注释 \/ xxx \/只能注释一行，而\/_ xxx _\/可以注释多行。\n 不好的注释：将代码翻译成中文的注释，无用过时的注释，发泄不满的注释。 好的注释：踩坑的注释，奇怪的代码和 bug 注释。  block 区块 { let a = 1; let b = 2; }  常与 if，for 和 while 一起用。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-20 23:54:36 \x2b0800 CST",
+    "dateModified" : "2020-01-20 23:54:36 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/javascript%E8%AF%AD%E6%B3%95\/",
+    "wordCount" : "245",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JavaScript语法</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-20 itemprop="datePublished">January 20, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="推荐书籍">推荐书籍：</h3>
+<ul>
+<li>你不知道的 JavaScript（先买上卷，适合进阶）</li>
+<li>阮一峰的免费教程</li>
+<li>网道</li>
+</ul>
+<h3 id="表达式">表达式</h3>
+<ul>
+<li>
+<p>1+2 表达式的值为 3。</p>
+</li>
+<li>
+<p>add(1,2）表达式的值为函数的返回值。</p>
+<p>note：值和返回值不一样，只有函数才有返回值。</p>
+</li>
+<li>
+<p>console.log 表达式的值为函数本身。</p>
+</li>
+<li>
+<p>console.log(3)表达式的值为 undefined，但会打印出来 3。</p>
+</li>
+</ul>
+<h3 id="语句">语句</h3>
+<ul>
+<li>var a = 1 是一个语句</li>
+</ul>
+<p>Notes：</p>
+<ul>
+<li>表达式一般都有值，语句可能有值，也可能没有。</li>
+<li>语句一般会改变环境（声明、赋值）。</li>
+<li>上面两句并不绝对。</li>
+</ul>
+<h3 id="js-区分大小写例如">JS 区分大小写，例如：</h3>
+<pre><code>       var a和var A
+       object和Object
+       function和Function都是不同的含义
+</code></pre>
+<h3 id="空格和回车">空格和回车</h3>
+<p>只要不影响断句，空格没有实际意思，回车大部分一样没有实际意思。</p>
+<h4 id="但-return-后不能加回车否则会返回一个-undefined">但 return 后不能加回车，否则会返回一个 undefined！！！</h4>
+<h3 id="标识符">标识符</h3>
+<p>变量名，第一个字符可以是 Unicode 字母，$,下划线或者中文。</p>
+<h3 id="注释">注释</h3>
+<p>/ xxx /只能注释一行，而/_ xxx _/可以注释多行。</p>
+<ul>
+<li>不好的注释：将代码翻译成中文的注释，无用过时的注释，发泄不满的注释。</li>
+<li>好的注释：踩坑的注释，奇怪的代码和 bug 注释。</li>
+</ul>
+<h3 id="block-区块">block 区块</h3>
+<pre><code>{
+  let a = 1;
+  let b = 2;
+}
+</code></pre>
+<p>常与 if，for 和 while 一起用。</p>
+<hr>
+<h3 id="ifelse语句">if&hellip;else&hellip;语句</h3>
+<ul>
+<li>
+<p>语法</p>
+<pre><code>if(表达式){
+    语句 1
+   } else {
+       语句 2
+        }
+</code></pre>
+<p>Notes：</p>
+<ul>
+<li>{ }在语句只有一句的时候可以省略，不建议这样做。</li>
+<li>if 语句中还可以嵌套 if else，同理 else 中也可以。</li>
+</ul>
+</li>
+<li>
+<p>最推荐的写法：</p>
+<pre><code>if(表达式){
+  语句
+}else if(表达式){
+  语句
+}else{
+  语句
+}
+</code></pre></li>
+<li>
+<p>次推荐的写法：</p>
+</li>
+</ul>
+<pre><code> function fn(){
+  if(表达式){
+    return 表达式
+  }
+  if(表达式){
+    return 表达式
+  }
+    return 表达式
+  }
+  ```
+
+### switch 语句
+不推荐，容易用错。
+- 语法：
+</code></pre><p>a = 2;
+switch(a){
+case 1：
+case 3:
+console.log(&lsquo;单数&rsquo;)；
+break;
+case 2：
+case 4：
+console.log(&lsquo;双数&rsquo;)；
+break；
+}</p>
+<pre><code>- break：
+  - 大部分时候，如果要使用switch,一定要记得使用break。
+  - 少部分时候，可以利用 break。
+
+### 问号冒号表达式
+简洁版的if...else...语句
+- 语法：
+
+         表达示1？表达式2：表达式3；
+
+### &amp;&amp;短路逻辑（全真才真）
+
+
+`A&amp;&amp;B`
+
+若AB都为真，则取B的值，若A为假，则`A&amp;&amp;B`为假，
+并不会取 true/false。
+
+### ||短路逻辑（一真就真）
+
+`A||B`
+若A为真，则为真。若A为假，则看B，B为真则为真，B为假则为假。
+如果能写成||或者&amp;&amp;，就绝对不写 if ...else...语句。
+
+***
+
+### while循环语句
+
+- 语法：
+
+
+</code></pre><p>while(表达式){
+语句
+}</p>
+<pre><code>1. 首先判断表达式的真假。
+2. 当表达式为真，执行语句，执行完再判断表达式的真假。
+3. 当表达式为假，执行while后面的语句。
+
+
+
+note：
+
+</code></pre><p>var a=0.1
+while(a!==1){
+console.log(a)
+a=a+0.1
+}</p>
+<pre><code>会出现死循环，这是因为浮点数不精确造成的问题，永远到不了1。
+
+而do...while语句用的不多，自行了解。
+
+### for循环语句
+
+ for是while循环的方便写法
+
+ - 语法
+
+       for（语句1;表达式2;语句3）{
+           循环体
+       }
+
+1. 先执行语句 1
+2. 然后判断表达式 2
+3. 如果为真，执行循环体，然后执行语句 3（break可以跳出循环）
+4. 如果为假，直接退出循环，执行后面的语句
+
+例如：
+</code></pre><p>for(var i=0;i&lt;5;i++){
+setTimeout(()=&gt;{
+console.log(i)
+})
+}</p>
+<pre><code>因为setTimeout是过一会时间才打印，过一会，for已经执行完，这时i=5，所以，会打印出五个5。而将var改成let的话，就会打出01234。
+
+### break 和 continue
+
+ - break：退出所有循环
+
+note：break 只会退出离它最近的循环，如果是多for嵌套循环，不会全退。
+
+- continue：退出当前循环
+
+### label 语句
+
+
+</code></pre><p>foo:{
+console.log(1);
+break foo;
+console.log(&lsquo;本行不会输出&rsquo;);
+}
+console.log(2);</p>
+<pre><code>输出 1 2
+- 问：下面的东西是什么？
+
+</code></pre><p>{
+a:1;
+}</p>
+<pre><code>答：不一个对象，a 是一个 label，它的语句就是一个 1。
+</code></pre>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/javascript%E8%AF%AD%E6%B3%95/>http://suixin.monster/javascript%E8%AF%AD%E6%B3%95/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/javascrip%E5%8E%86%E5%8F%B2%E5%8F%8A%E8%AE%BE%E8%AE%A1%E7%BC%BA%E9%99%B7%E6%80%BB%E7%BB%93/" class="prev" rel="prev" title="JavaScrip历史及设计缺陷总结"><i class="iconfont icon-left"></i>&nbsp;JavaScrip历史及设计缺陷总结</a>
+         
+        
+        <a href="http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/" class="next" rel="next" title="系统学习HTTP">系统学习HTTP&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

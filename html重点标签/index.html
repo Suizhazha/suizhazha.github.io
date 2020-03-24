@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/" />
+  <link rel="next" href="http://suixin.monster/css%E5%9F%BA%E7%A1%80/" />
+  <link rel="canonical" href="http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           HTML重点标签 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="HTML重点标签 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "HTML重点标签",
+    "headline" : "HTML重点标签",
+    "description" : "最近两天看了饥人谷的 HTML 网课，结合 mdn 文档写了篇博客，分享给大家。如有错误之处，欢迎指正！（没有奖励 😝）\na 标签 \x26lt;a href=\x26quot;\x26quot; target=\x26quot;\x26quot;\x26gt;\x26lt;\/a\x26gt;\n 属性：  href：超链接 target：打开超链接窗口方式 （http-server -c-1 或着 parcel\x2b文件名来打开 vscode 网址） download 下载网页（很多浏览器不支持） rel=noopener（防止一个 bug，以后会讲）   a 的 href 取值：  网址：  https:\/\/网址 http:\/\/网址 \/\/网址（最高级，推荐。查看：开发者工具，勾选 preserve log,浏览器自动补全跳转）   路径  \/a\/b\/c 以及 a\/b\/c（当前目录下查找） index.com 以及.\/index.com（都是当前目录下查找）   伪协议  Javascript:;\x26lt;a href=\x26quot;Javascript:;\x26quot;\x26gt;\x26lt;\/a\x26gt;为了直接执行 js，现在常作点击之后无动作的 a 标签） mailto:邮箱\x26lt;a href=\x26quot;mailto:573505403@qq.com\x26quot;\x26gt;\x26lt;\/a\x26gt; tel:手机号（简历用）\x26lt;a href=\x26quot;tel:17853318194\x26quot;\x26gt;\x26lt;\/a\x26gt;   id :\x26lt;a href=\x26quot;#xxx\x26quot;\x26gt;\x26lt;\/a\x26gt;（内部锚点，跳转到指定标签位置）   a 的 targe 取值：  内置名字：  _blank（在新窗口打开） _self（在当前窗口打开） _top（在最顶层窗口打开） _parent（在父级窗口打开） xxx（有 xxx 窗口就使用，没有就在新窗口打开就命名新窗口为 xxx，多链接看效果）     iframe 标签： 内嵌窗口，已经很少使用，现在都用 ajax 方式。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-03 22:14:28 \x2b0800 CST",
+    "dateModified" : "2020-01-03 22:14:28 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE\/",
+    "wordCount" : "198",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HTML重点标签</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-03 itemprop="datePublished">January 3, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>最近两天看了饥人谷的 HTML 网课，结合 mdn 文档写了篇博客，分享给大家。如有错误之处，欢迎指正！（没有奖励 😝）</p>
+<h3 id="a-标签">a 标签</h3>
+<p><code>&lt;a href=&quot;&quot; target=&quot;&quot;&gt;&lt;/a&gt;</code></p>
+<hr>
+<h3 id="属性">属性：</h3>
+<ul>
+<li>href：超链接</li>
+<li>target：打开超链接窗口方式
+（http-server -c-1 或着 parcel+文件名来打开 vscode 网址）</li>
+<li>download 下载网页（很多浏览器不支持）</li>
+<li>rel=noopener（防止一个 bug，以后会讲）</li>
+</ul>
+<hr>
+<h3 id="a-的-href-取值">a 的 href 取值：</h3>
+<ul>
+<li>网址：
+<ol>
+<li>https://网址</li>
+<li>http://网址</li>
+<li>//网址（最高级，推荐。查看：开发者工具，勾选 preserve log,浏览器自动补全跳转）</li>
+</ol>
+</li>
+<li>路径
+<ol>
+<li>/a/b/c 以及 a/b/c（当前目录下查找）</li>
+<li>index.com 以及./index.com（都是当前目录下查找）</li>
+</ol>
+</li>
+<li>伪协议
+<ol>
+<li>Javascript:;<code>&lt;a href=&quot;Javascript:;&quot;&gt;&lt;/a&gt;</code>为了直接执行 js，现在常作点击之后无动作的 a 标签）</li>
+<li>mailto:邮箱<code>&lt;a href=&quot;mailto:573505403@qq.com&quot;&gt;&lt;/a&gt;</code></li>
+<li>tel:手机号（简历用）<code>&lt;a href=&quot;tel:17853318194&quot;&gt;&lt;/a&gt;</code></li>
+</ol>
+</li>
+<li>id :<code>&lt;a href=&quot;#xxx&quot;&gt;&lt;/a&gt;</code>（内部锚点，跳转到指定标签位置）</li>
+</ul>
+<hr>
+<h3 id="a-的-targe-取值">a 的 targe 取值：</h3>
+<ul>
+<li>内置名字：
+<ol>
+<li>_blank（在新窗口打开）</li>
+<li>_self（在当前窗口打开）</li>
+<li>_top（在最顶层窗口打开）</li>
+<li>_parent（在父级窗口打开）</li>
+<li>xxx（有 xxx 窗口就使用，没有就在新窗口打开就命名新窗口为 xxx，多链接看效果）</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="iframe-标签">iframe 标签：</h3>
+<p>内嵌窗口，已经很少使用，现在都用 ajax 方式。</p>
+<hr>
+<h3 id="table-标签">table 标签</h3>
+<p>table 内只能有 thead，tbody，tfoot 标签，包括：</p>
+<ul>
+<li>tr：table 一行</li>
+<li>th：table 表头</li>
+<li>td：table 数据
+table 三个标签可以不按顺序写，浏览器自动纠正顺序。</li>
+</ul>
+<h4 id="相关样式">相关样式：</h4>
+<ol>
+<li>
+<p>table-layout：
+用于布局单元格，行和列的算法。其属性：</p>
+<ul>
+<li>auto：浏览器采用自动表格布局算法对表格布局。表格及单元格的宽度取决于其包含的内容。</li>
+<li>fixed：表格和列的宽度通过表格的宽度来设置，某一列的宽度仅由该列首行的单元格决定。在当前列中，该单元格所在行之后的行并不会影响整个列宽。</li>
+</ul>
+</li>
+<li>
+<p>border-collapse：用来决定表格的边框是分开的还是合并的。</p>
+<ul>
+<li>collapse：合并，相邻的单元格共用同一条边框。</li>
+<li>separate：分开，默认值。每个单元格拥有独立的边框。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="img-标签">img 标签：</h3>
+<p>发出 get 请求，展示一张图片。</p>
+<h4 id="属性-1">属性：</h4>
+<ul>
+<li>src：必须存在，包含图片的网络地址或文件路径。</li>
+<li>alt：不一定存在，包含对图像的文本描述，加载失败会提示代替的文本。</li>
+<li>weight：只写高度，宽度会自适应。</li>
+<li>height：只写宽度，高度会自适应。</li>
+</ul>
+<p>note:永远不要让图片变形！可以只写高度或宽度。</p>
+<h4 id="js-事件">js 事件:</h4>
+<p>onload/onerror:监听图片是否加载成功。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6a81fca1ffd9f?w=275&amp;h=118&amp;f=png&amp;s=31091" alt=""></p>
+<h4 id="响应式">响应式：</h4>
+<p>先所有元素 css reset，加句
+<code>img{max-width：100%}</code></p>
+<hr>
+<h3 id="form-标签">form 标签：</h3>
+<p>表单标签，内一般含有输入框和提交按钮（input 标签）。作用：发送一个 get 或 post 请求，然后刷新页面。</p>
+<h4 id="属性-2">属性：</h4>
+<ul>
+<li>action：处理此表单信息所在的 URL。</li>
+<li>method：可使用 HTTP post 或 get 方式来提交表单。</li>
+<li>autocomplete：浏览器自动填充,使用 on 或 off 来打开或着关闭此功能。</li>
+<li>target：在提交表单之后，在哪个页面显示收到的回复，包括_self，_blank，_top 和_parent。</li>
+</ul>
+<h4 id="事件">事件：</h4>
+<p>onsubmit：用户点击提交按钮后触发。提交按钮可使用 value 更改提交按钮名称。
+例如：<code>&lt;input type=&quot;submit&quot; value=&quot;发射&quot;&gt;</code><!-- raw HTML omitted --></p>
+<p>或者<code>&lt;button type=&quot;submit&quot;&gt;发射&lt;/button&gt;</code><!-- raw HTML omitted -->发射<!-- raw HTML omitted -->。</p>
+<p>note:两个区别 input 内不能再加其他标签，只能是纯文本，而 button 可以，甚至可以加图片。例如：<code>&lt;button type=&quot;submit&quot;&gt;&lt;strong&gt;发射&lt;/strong&gt;&lt;/button&gt;</code><!-- raw HTML omitted --><!-- raw HTML omitted -->发射<!-- raw HTML omitted --><!-- raw HTML omitted -->。</p>
+<hr>
+<h3 id="input-标签">input 标签：</h3>
+<p>为了让用户输入内容。</p>
+<h4 id="常用属性">常用属性：</h4>
+<ul>
+<li>text：单行文本框，默认 type。</li>
+<li>color：颜色控件。</li>
+<li>password：值被遮盖的单行文本字段。</li>
+<li>radio：单选按钮，name 属性使用同一个值可实现二选一。</li>
+<li>checkbox：多选按钮，name 属性使用同一个值，使其在同一数组中。</li>
+<li>file：选择文件，多选文件可添加 multiple 属性。</li>
+<li>hidden：隐藏的控件，用于 js 自动填入 id，字符串之类的。</li>
+<li>image：图片提交按钮。可以使用 height 和 width 属性定义图片的大小。</li>
+</ul>
+<h4 id="事件-1">事件：</h4>
+<p>onchange：用户输入改变时触发。
+onfocus：用户鼠标集中时触发。
+onblur：用户鼠标离开时触发。</p>
+<h4 id="验证器">验证器：</h4>
+<p>HTML5 新增功能。例如必须提交文本：<code>&lt;input type=&quot;text&quot; required&gt;</code></p>
+<!-- raw HTML omitted -->
+<h4 id="注意事项">注意事项：</h4>
+<ul>
+<li>一般不监听input的click事件。</li>
+<li>form内的input要有name。</li>
+<li>form内放一个type=submit才能触发submit事件。</li>
+</ul>
+<hr>
+<h4 id="其他标签">其他标签:</h4>
+<ul>
+<li>
+<p>textarea：多行文本框。固定文本框大小可用<code>&lt;textarea style=&quot;resize: none;&quot;&gt;&lt;/textarea&gt;</code>具体大小可用 width，height 属性固定。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>select:选择标签，例如：
+<code>&lt;select&gt;&lt;option value=&quot;1&quot;&gt;周一&lt;/option&gt;&lt;option value=&quot;1&quot;&gt;周二&lt;/option&gt;&lt;/select&gt;</code></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->请选择<!-- raw HTML omitted --><!-- raw HTML omitted -->周一<!-- raw HTML omitted --><!-- raw HTML omitted -->周二<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/>http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/" class="prev" rel="prev" title="使用hugo搭建个人博客mac版"><i class="iconfont icon-left"></i>&nbsp;使用hugo搭建个人博客mac版</a>
+         
+        
+        <a href="http://suixin.monster/css%E5%9F%BA%E7%A1%80/" class="next" rel="next" title="CSS基础">CSS基础&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/" />
+  <link rel="next" href="http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/" />
+  <link rel="canonical" href="http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JS变量声明，数据类型和类型转换 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="JS变量声明，数据类型和类型转换 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "JS变量声明，数据类型和类型转换",
+    "headline" : "JS变量声明，数据类型和类型转换",
+    "description" : "推荐阅读：《我用了两个月的时间才理解 let》 变量声明 三种声明方式：\n  var a = 1\nvar 过时，不好用。\n  let a = 1\nlet 新的，更合理，用于变量声明。\n  const a = 1\nconst 声明必须赋值，不可更改，用于常量声明。\n  let 声明：  遵循块作用域，使用范围不超过{}。 不能重复声明。 可以赋值也可不赋值。 先声明后使用，否则报错。 全局声明的 let 变量，不会变成 window 的属性，但是 var 可以。 for 循环配合 let 有奇效（面试题）。  const 声明：  规则几乎跟 let 一样。 声明时就要赋值，且赋值后不能更改（只读变量，即常量）。 无法和 for 配合，因为值不可改。  note：变量声明的时候，既指定了值，也指定了类型。 JS 数据类型   数字 number： 64 位浮点数存储一个 number，其中符号占 1 位，指数占 11 位（-1023~1024），有效数字占 52 位（省略开头的 1）。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-26 21:00:42 \x2b0800 CST",
+    "dateModified" : "2020-01-26 21:00:42 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2\/",
+    "wordCount" : "194",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JS变量声明，数据类型和类型转换</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-26 itemprop="datePublished">January 26, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="推荐阅读我用了两个月的时间才理解-let">推荐阅读：《我用了两个月的时间才理解 let》</h2>
+<h2 id="变量声明">变量声明</h2>
+<p>三种声明方式：</p>
+<ol>
+<li>
+<p>var a = 1</p>
+<p>var 过时，不好用。</p>
+</li>
+<li>
+<p>let a = 1</p>
+<p>let 新的，更合理，用于变量声明。</p>
+</li>
+<li>
+<p>const a = 1</p>
+<p>const 声明必须赋值，不可更改，用于常量声明。</p>
+</li>
+</ol>
+<h3 id="let-声明">let 声明：</h3>
+<ul>
+<li>遵循块作用域，使用范围不超过{}。</li>
+<li>不能重复声明。</li>
+<li>可以赋值也可不赋值。</li>
+<li>先声明后使用，否则报错。</li>
+<li>全局声明的 let 变量，不会变成 window 的属性，但是 var 可以。</li>
+<li>for 循环配合 let 有奇效（面试题）。</li>
+</ul>
+<h3 id="const-声明">const 声明：</h3>
+<ul>
+<li>规则几乎跟 let 一样。</li>
+<li>声明时就要赋值，且赋值后不能更改（只读变量，即常量）。</li>
+<li>无法和 for 配合，因为值不可改。</li>
+</ul>
+<h3 id="note变量声明的时候既指定了值也指定了类型">note：变量声明的时候，既指定了值，也指定了类型。</h3>
+<h2 id="js-数据类型">JS 数据类型</h2>
+<ul>
+<li>
+<p>数字 number：
+64 位浮点数存储一个 number，其中符号占 1 位，指数占 11 位（-1023~1024），有效数字占 52 位（省略开头的 1）。</p>
+<p>note：正 0，负 0 和 0 是不一样的。</p>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/26/16fe17d7a0e30f31?w=214&amp;h=196&amp;f=png&amp;s=21429" alt=""></p>
+<ul>
+<li>
+<p>字符串 string：阉割版 UTF8</p>
+<ul>
+<li>单引号&rsquo;&rsquo;</li>
+<li>双引号&rdquo;&rdquo;</li>
+<li>反引号``(es6)</li>
+</ul>
+<p>note:</p>
+</li>
+</ul>
+<ol>
+<li>引号不属于字符串的一部分，例如：
+&lsquo;it&rsquo;s ok'只表示 it 就结束，而</li>
+</ol>
+<pre><code>'it/'s ok'  //转义,表示it's ok
+&quot;it's ok&quot;
+`it's ok`用反引号`来引用，万能
+</code></pre><pre><code>```
+\' 表示'
+\&quot; 表示&quot;
+\\ 表示/
+\n 表示换行
+\r 表示回车
+\t 表示Tab制表符
+\uFFFF 表示对应的Unicode字符
+\xFF表示前256个Unicode字符
+```
+</code></pre>
+<ol start="2">
+<li>想在字符串里打会出，可以使用反引号+内容+回车+反引号.</li>
+<li>' &lsquo;字符串长度为 1，空字符串和空格字符串不同。</li>
+<li>UTF-8 是 Unicode 的一种存储规则，也叫字符编码规则。</li>
+</ol>
+<p>note：数字和字符串</p>
+<ul>
+<li>
+<p>功能不同：</p>
+<ol>
+<li>数字能加减乘除，字符串不行。</li>
+<li>字符串可以表示电话号码，数字不行。</li>
+</ol>
+</li>
+<li>
+<p>存储形式不同:</p>
+<ol>
+<li>数字：以 64 位浮点数的形式储存。</li>
+<li>字符串：以 UTF8 形式储存。</li>
+</ol>
+</li>
+<li>
+<p>布尔 bool： if&hellip;else&hellip;</p>
+<ul>
+<li>ture：1==1，4&gt;3 等等。</li>
+<li>false：！value，1==2 等等。</li>
+<li>5 个 falsy 值（相当于 false 但又不是 false 的值）：undefined，null，0，NaN 和&rsquo;'。</li>
+</ul>
+</li>
+<li>
+<p>符号 symbol：用的很少。</p>
+</li>
+<li>
+<p>空 undefined 和空 null：JS 独创，没有本质区别。</p>
+</li>
+</ul>
+<ol>
+<li>若一个变量声明了，但无赋值，则默认为 undefined 默认。</li>
+<li>而一个函数如果没写 return，则返回值默认为 undefined。</li>
+<li>有人代码习惯上，非对象的空值为 undefined，对象的空值为 null。</li>
+</ol>
+<ul>
+<li>对象 object：下一篇单独发布。</li>
+</ul>
+<p>note：</p>
+<ol>
+<li>数组，函数和日期不是数据类型。</li>
+<li>数组，函数和日期属于 object。</li>
+<li>四基两空一对象。</li>
+<li>undefined，null，number，string，bool，symbol 为简单类型，object 为复杂类型。</li>
+<li>数据类型大小写无所谓。</li>
+</ol>
+<h2 id="类型转换">类型转换</h2>
+<ul>
+<li>
+<p>number=&gt;string</p>
+<ul>
+<li>String(n)</li>
+<li>n+&rsquo;&rsquo;</li>
+</ul>
+</li>
+<li>
+<p>string=&gt;number</p>
+<ul>
+<li>Number（s）</li>
+<li>s - 0</li>
+<li>+s</li>
+<li>parseInt（s）</li>
+<li>parseFloat（s）</li>
+</ul>
+</li>
+<li>
+<p>x=&gt;bool</p>
+<ul>
+<li>Boolean(1)</li>
+<li>!!1</li>
+</ul>
+</li>
+<li>
+<p>x=&gt;string - x.toString</p>
+<p>note：js 的 bug
+<img src="https://user-gold-cdn.xitu.io/2020/1/26/16fe1d7b91411efe?w=553&amp;h=233&amp;f=png&amp;s=44029" alt=""></p>
+</li>
+</ul>
+<h2 id="js-的奇葩">JS 的奇葩</h2>
+<p>可查看 JS 的秘密花园</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/>http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0http/" class="prev" rel="prev" title="系统学习HTTP"><i class="iconfont icon-left"></i>&nbsp;系统学习HTTP</a>
+         
+        
+        <a href="http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/" class="next" rel="next" title="JavaScript对象">JavaScript对象&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

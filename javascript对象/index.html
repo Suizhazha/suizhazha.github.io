@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" />
+  <link rel="next" href="http://suixin.monster/js%E6%95%B0%E7%BB%84/" />
+  <link rel="canonical" href="http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           JavaScript对象 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="JavaScript对象 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "JavaScript对象",
+    "headline" : "JavaScript对象",
+    "description" : "对象 object 唯一复杂数据类型\n  定义\n 无序的数据集合 键值对（name 是键，frank 是值，组成了一对键值对）的集合    写法\n1. let obj={\x27name\x27:\x27frank\x27,\x27age\x27:18} \/\/name，age 只能是字符串，就算引号删掉，也还是字符串 2. let obj=new Object({name\x27:\x27frank\x27}) \/\/正规写法，上面是简单写法 3. console.log({\x27name\x27:\x27frank\x27,\x27age\x27:18}) \/\/匿名字符串   notes：\n 键名 key 是字符串，不是标识符（标识符不能以数字开头的，键名可以用数字），可以包含任意字符（空字符串、空格字符串也合法） 引号可省略，省略之后只能写标识符，但中文、空格需要加引号。 就算引号省略了，键名也还是字符串！ 每一个 key 都是对象的属性名，name 是属性名，每一个 value 都是对象的属性值，frank 是属性值。    奇怪的属性名\n  所有属性名会自动变成字符串\n let obj={ 1:\x27a\x27, 3.2:\x27b\x27, 1e2:true, 1e-2:true, .234:true, 0xFF:true } Object.key(obj) =\x26gt;[\x26quot;1\x26quot;,\x26quot;100\x26quot;,\x26quot;255\x26quot;,\x26quot;3.2\x26quot;,\x26quot;0.01\x26quot;,\x26quot;0.234\x26quot;] \/\/Object.key(obj)为打出所有的键名（key）  变量做属性名  notes：  使用变量的值作为 key，需要加[]。 不加[]的属性名会自动变成字符串。 值如果不是字符串，则自动变成字符串。  对象的隐藏属性： JS 中每一个对象都有一个隐藏属性,这个隐藏属性储存着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,即隐藏属性储存着原型的地址。例如：",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-27 21:13:53 \x2b0800 CST",
+    "dateModified" : "2020-01-27 21:13:53 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/javascript%E5%AF%B9%E8%B1%A1\/",
+    "wordCount" : "176",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JavaScript对象</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-27 itemprop="datePublished">January 27, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="对象-object">对象 object</h2>
+<p>唯一复杂数据类型</p>
+<ul>
+<li>
+<p>定义</p>
+<ul>
+<li>无序的数据集合</li>
+<li>键值对（name 是键，frank 是值，组成了一对键值对）的集合</li>
+</ul>
+</li>
+<li>
+<p>写法</p>
+<pre><code>1. let obj={'name':'frank','age':18} //name，age 只能是字符串，就算引号删掉，也还是字符串
+
+2. let obj=new Object({name':'frank'}) //正规写法，上面是简单写法
+
+3. console.log({'name':'frank','age':18}) //匿名字符串
+</code></pre></li>
+<li>
+<p>notes：</p>
+<ul>
+<li>键名 key 是字符串，不是标识符（标识符不能以数字开头的，键名可以用数字），可以包含任意字符（空字符串、空格字符串也合法）</li>
+<li>引号可省略，省略之后只能写标识符，但中文、空格需要加引号。</li>
+<li>就算引号省略了，键名也还是字符串！</li>
+<li>每一个 key 都是对象的属性名，name 是属性名，每一个 value 都是对象的属性值，frank 是属性值。</li>
+</ul>
+</li>
+<li>
+<p>奇怪的属性名</p>
+</li>
+</ul>
+<p>所有属性名会自动变成字符串</p>
+<pre><code> let obj={
+   1:'a',
+   3.2:'b',
+   1e2:true,
+   1e-2:true,
+   .234:true,
+   0xFF:true
+ }
+ Object.key(obj)
+ =&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]
+ //Object.key(obj)为打出所有的键名（key）
+</code></pre><ul>
+<li>变量做属性名</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/26/16fe22aca74fd8bd?w=323&amp;h=416&amp;f=png&amp;s=41500" alt=""></p>
+<h4 id="notes">notes：</h4>
+<ol>
+<li>使用变量的值作为 key，需要加[]。</li>
+<li>不加[]的属性名会自动变成字符串。</li>
+<li>值如果不是字符串，则自动变成字符串。</li>
+</ol>
+<h2 id="对象的隐藏属性">对象的隐藏属性：</h2>
+<p>JS 中每一个对象都有一个隐藏属性,这个隐藏属性储存着其共有属性组成的对象的地址,这个共有属性组成的对象叫做原型,即隐藏属性储存着原型的地址。例如：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/26/16fe2336d606fb73?w=516&amp;h=470&amp;f=png&amp;s=146450" alt=""></p>
+<p>可以使用 obj 访问那些共有属性:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/26/16fe2346a47fe9af?w=292&amp;h=220&amp;f=png&amp;s=31287" alt=""></p>
+<p>note：除了字符串，，symbol 也能做属性名，但目前用不到，迭代是会用。</p>
+<pre><code>let a=symbol()
+let obj={[a]:'Hello'}
+</code></pre><hr>
+<h2 id="增删改查">增删改查</h2>
+<ul>
+<li>
+<p>删除属性</p>
+<ul>
+<li>delete obj.xxx 或 delete obj[&lsquo;xxx&rsquo;]</li>
+</ul>
+<p>Notes：</p>
+<ol>
+<li>
+<p>区分属性值为 undefined 和不含属性名。</p>
+</li>
+<li>
+<p>使用<code>'属性名' in obj</code>可以查看不管是自身还是共有的属性是否存在。</p>
+</li>
+<li>
+<p>delete 只能删属性，不能删除对象。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>查看属性</p>
+<pre><code>- 查看自身所有属性
+</code></pre>
+<p><code>Object.keys(obj)</code> - 查看自身所有值：
+<code>Object.values(obj)</code> - 查看自身所有属性和值：
+<code>obj</code>或<code>Object.entries(obj)</code> - 查看自身属性和共有属性
+<code>console.dir(obj)</code> - 也可依次用出 <code>obj.__xxx__</code>查看共有属性 - 查看单个属性： 1. 中括号语法：<code>obj['key']</code> 2. 点语法：<code>obj.key</code> 3. 错误语法：<code>obj[key] // 变量 key 值一般不为'key'</code></p>
+<pre><code>Q：如何判断一个属性是自身的还是共有的
+
+A：obj.hasOwnProperty('toString')
+</code></pre>
+</li>
+</ul>
+<p>note：对象的原型也是对象，而原型（对象的根）的原型，值为 null。</p>
+<ul>
+<li>
+<p>修改或增加属性</p>
+<ul>
+<li>直接赋值</li>
+</ul>
+</li>
+</ul>
+<pre><code>let obj={name:'frank'} // name是字符串
+obj.name='frank' // name是字符串
+obj['name']='frank'
+obj['na'+'me']='frank'
+let key='name';obj[key]='frank'
+let key='name';obj.key='frank' // 错误，因为obj.key等价于obj['key']
+obj[name]='frank' // 错误，因为name值不确定
+</code></pre><ul>
+<li>
+<p>批量赋值(ES6 新出的 API)<br>
+<code>Object.assign(obj,{age:18,gender:'man'})</code></p>
+<ul>
+<li>修改或者增加共有属性</li>
+</ul>
+<p>无法通过自身修改或增加共有属性</p>
+<pre><code>let obj={},obj2={} // 共有 toString
+obj.toString='xxx'//只会在改 obj 自身属性
+obj2.toString //还是在原型上
+</code></pre><p>若非要修改或增加原型上的属性</p>
+<pre><code>obj.__proto__.toString='xxx' // 不推荐用__proto__
+Object.prototype.toString='xxx'
+//一般来说，永远不要修改原型，会引起很多问题，比如代码崩溃，代码异常
+</code></pre><ul>
+<li>修改隐藏属性:</li>
+</ul>
+<p>不推荐使用 proto</p>
+<pre><code>let obj={name:'frank'}
+let obj2={name:'jack'}
+let common={kind:'human'}
+obj.__proto__=common
+obj2.__proto__=common
+</code></pre><p>推荐使用 Object.create</p>
+<pre><code>let obj=Object.create(common)
+obj.name='frank'
+let obj=Object.create(common)
+obj2.name='suixin'
+</code></pre></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/>http://suixin.monster/javascript%E5%AF%B9%E8%B1%A1/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/js%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="prev" rel="prev" title="JS变量声明，数据类型和类型转换"><i class="iconfont icon-left"></i>&nbsp;JS变量声明，数据类型和类型转换</a>
+         
+        
+        <a href="http://suixin.monster/js%E6%95%B0%E7%BB%84/" class="next" rel="next" title="JS数组">JS数组&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/css%E5%9F%BA%E7%A1%80/" />
+  <link rel="next" href="http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  <link rel="canonical" href="http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           CSS布局和定位 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="CSS布局和定位 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "CSS布局和定位",
+    "headline" : "CSS布局和定位",
+    "description" : "布局是什么： 把页面分成一块一块，按左中右，上中下等排列。\n布局分类:  固定宽度布局，例如淘宝网， 一般宽度 960\/1000\/1024px。 不固定宽度布局，例如手机端，主要靠文档流原理布局。 文档流本身就是自适应的，不需要额外添加样式。 响应式布局，pc 上固定宽度，手机上不固定宽度，是一种混合布局。  布局思路：  从大到小:先定大局，再完善每个小布局。 从小到大:先完成小布局，再组合成大布局，推荐新手。   三种布局套路：   float 布局：\n1. 子元素上加float：left和width。 2. 在父元素上加.clearfix。 例如： ![](https:\/\/user-gold-cdn.xitu.io\/2020\/1\/7\/16f801aab2022468?w=1279\x26amp;h=699\x26amp;f=png\x26amp;s=116392)  Notes：\n  有时最后一个元素不加 width，留些空间，可加上最大宽度max-width：100px；若加上 width 会出现下图情况:   不需要做响应式，float 布局专为 IE 准备。\n  解决 IE6\/7 存在双倍 margin 的 bug，\n 1. 针对IE6\/7，把margin减半，如下图，则IE上显示5px乘2，正常浏览器上显示10px：  2. 加一个 display：inline-block； - 若图片下有多余的东西： 添加 vertical-align: top; 或者vertical-align: middle;   有时 border 调试会干扰 width，可用 outline 调试。",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-10 19:54:28 \x2b0800 CST",
+    "dateModified" : "2020-01-10 19:54:28 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D\/",
+    "wordCount" : "276",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">CSS布局和定位</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-10 itemprop="datePublished">January 10, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="布局是什么">布局是什么：</h3>
+<p>把页面分成一块一块，按左中右，上中下等排列。</p>
+<h3 id="布局分类">布局分类:</h3>
+<ul>
+<li>固定宽度布局，例如淘宝网， 一般宽度 960/1000/1024px。</li>
+<li>不固定宽度布局，例如手机端，主要靠文档流原理布局。
+文档流本身就是自适应的，不需要额外添加样式。</li>
+<li>响应式布局，pc 上固定宽度，手机上不固定宽度，是一种混合布局。</li>
+</ul>
+<h3 id="布局思路">布局思路：</h3>
+<ul>
+<li>从大到小:先定大局，再完善每个小布局。</li>
+<li>从小到大:先完成小布局，再组合成大布局，推荐新手。</li>
+</ul>
+<hr>
+<h3 id="三种布局套路">三种布局套路：</h3>
+<ul>
+<li>
+<p>float 布局：</p>
+<pre><code>1. 子元素上加float：left和width。
+2. 在父元素上加.clearfix。
+
+例如：
+
+![](https://user-gold-cdn.xitu.io/2020/1/7/16f801aab2022468?w=1279&amp;h=699&amp;f=png&amp;s=116392)
+</code></pre>
+<p>Notes：</p>
+<ul>
+<li>
+<p>有时最后一个元素不加 width，留些空间，可加上最大宽度<code>max-width：100px；</code>若加上 width 会出现下图情况:
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f80226f625feb8?w=139&amp;h=51&amp;f=png&amp;s=3749" alt=""></p>
+</li>
+<li>
+<p>不需要做响应式，float 布局专为 IE 准备。</p>
+</li>
+<li>
+<p>解决 IE6/7 存在双倍 margin 的 bug，</p>
+<pre><code> 1. 针对IE6/7，把margin减半，如下图，则IE上显示5px乘2，正常浏览器上显示10px：
+</code></pre>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/7/16f803169194f6f8?w=267&amp;h=55&amp;f=png&amp;s=8283" alt=""> 2. 加一个 display：inline-block； - 若图片下有多余的东西：
+添加
+<code>vertical-align: top;</code>
+或者<code>vertical-align: middle;</code>
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f806065bc2dd9d?w=403&amp;h=107&amp;f=png&amp;s=30878" alt=""></p>
+</li>
+<li>
+<p>有时 border 调试会干扰 width，可用 outline 调试。</p>
+</li>
+<li>
+<p>如果有块级元素且 width 固定，则左右 margin 的 auto 可让元素自动居中。</p>
+</li>
+<li>
+<p>关于平均布局，计算出 x，y 的值，必要时中间加一层 div，用到负 margin，值为 y 的值。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>flex 布局：</p>
+<pre><code>flex container（容器）样式：一般作父元素
+
+ - 让一个元素变成flex容器：
+</code></pre>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/8/16f8519c00157e08?w=292&amp;h=136&amp;f=png&amp;s=10623" alt=""></p>
+<ol>
+<li>
+<p>justify-content 属性：将 flex 元素与主轴对齐。</p>
+<ul>
+<li>flex-start: 元素和容器的左端对齐</li>
+<li>flex-end: 元素和容器的右端对齐</li>
+<li>center: 元素在容器里居中</li>
+<li>space-between:元素之间保持相等的距离</li>
+<li>space-around:元素周围保持相等的距离</li>
+</ul>
+</li>
+<li>
+<p>align-items 属性：在交叉轴上对齐多个元素。</p>
+<ul>
+<li>flex-start: 元素与容器的顶部对齐</li>
+<li>flex-end: 元素与容器的底部对齐。</li>
+<li>center: 元素纵向居中</li>
+<li>baseline: 元素在容器的基线位置显示</li>
+<li>stretch: 元素被拉伸以填满整个容器</li>
+</ul>
+</li>
+<li>
+<p>flex-direction 属性:决定主轴的方向。</p>
+<ul>
+<li>row: 元素摆放的方向和文字方向一致</li>
+<li>row-reverse: 元素摆放的方向和文字方向相反</li>
+<li>column: 元素从上放到下</li>
+<li>column-reverse: 元素从下放到上</li>
+</ul>
+</li>
+<li>
+<p>flex-wrap 属性：定义元素必须在一行，或者自动换行。</p>
+<ul>
+<li>nowrap: 所有的元素都在一行</li>
+<li>wrap: 元素自动换成多行</li>
+<li>wrap-reverse: 元素自动换成逆序的多行</li>
+</ul>
+</li>
+<li>
+<p>flex-flow 属性：
+flex-flow 属性包括 flex-direction 和 flex-wrap 两个属性，这个缩写属性接受两个属性的值，两个值中间以空格隔开。</p>
+<pre><code>例如：`flex-flow: row wrap;`设置行并自动换行。
+</code></pre>
+</li>
+<li>
+<p>align-content 属性：决定行与行之间的间隔，而 align-items 决定元素整体在容器的什么位置。</p>
+<ul>
+<li>flex-start: 多行都集中在顶部。</li>
+<li>flex-end: 多行都集中在底部。</li>
+<li>center: 多行居中。</li>
+<li>space-between: 行与行之间保持相等距离。</li>
+<li>space-around: 每行的周围保持相等距离。</li>
+<li>stretch: 每一行都被拉伸以填满容器。</li>
+</ul>
+</li>
+</ol>
+<p>flex items（项目）样式：一般作子元素</p>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/9/16f89d7b43b2400c?w=189&amp;h=186&amp;f=png&amp;s=23768" alt=""></p>
+<ol>
+<li>
+<p>order 属性:决定 flex 元素的顺序，元素的属性默认值为 0，还可设置属性为正数或负数。</p>
+</li>
+<li>
+<p>flex-grow 属性：决定 flex 元素的拉伸程度，元素的属性默认值为 0，还可设置属性为正数。</p>
+</li>
+<li>
+<p>flex-shrink 属性：决定了 flex 元素的收缩程度，flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值，属性默认值为 0，还可设置属性为正数。</p>
+</li>
+<li>
+<p>flex-basis 属性：决定了 flex 元素的基准宽度，如果不使用 box-sizing 改变盒模型的话，那么这个属性就决定了 flex 元素的内容盒（content-box）的尺寸，属性默认值为 auto。</p>
+</li>
+<li>
+<p>flex-grow、flex-shrink 和 flex-basis 属性可以缩写，例如:</p>
+<pre><code>  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100px;
+</code></pre>
+<p>可以写成：</p>
+<pre><code>  flex： 1 0 100px;
+</code></pre>
+</li>
+<li>
+<p>align-self 属性：在交叉轴上对齐一个元素，其值和 align-items 相同，但会覆盖 align-items 属性值。</p>
+</li>
+</ol>
+<h3 id="推荐一款-flex-青蛙游戏轻松愉快学习-flex-布局以上-flex-元素属性解释也参考此游戏详细可访问httpsflexboxfroggycomzh-cn">推荐一款 flex 青蛙游戏，轻松愉快学习 flex 布局，以上 flex 元素属性解释也参考此游戏，详细可访问https://flexboxfroggy.com/#zh-cn。</h3>
+<ul>
+<li>grid 布局：功能最强大的布局方案，但目前兼容性还不好。也分 container 和 items 样式，使用 grid-template-rows 和 grid-template-columns 属性来定义网格的 columns 和 rows，也可使用 grid-column-start, grid-column-end, grid-row-start 和 grid-row-end 属性定位网格线。
+例如：</li>
+</ul>
+<pre><code>.container {
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           grid-template-rows: 100px 100px;
+         }
+.items{
+     grid-column-start: 1;
+     grid-column-end: 2;
+     grid-row-start: 1;
+     grid-row-end: 2;
+ }
+</code></pre><p><img src="https://user-gold-cdn.xitu.io/2020/1/9/16f8a5ad65608989?w=651&amp;h=335&amp;f=png&amp;s=13874" alt=""></p>
+<h4 id="grid-尤其适合不规则的布局">grid 尤其适合不规则的布局。</h4>
+<hr>
+<h3 id="css-定位">CSS 定位：</h3>
+<ul>
+<li>
+<p>position</p>
+<ul>
+<li>
+<p>static：默认值，待在文档流里</p>
+</li>
+<li>
+<p>relative：相对定位，未脱离文档流，可在不改变页面布局的前提下调整元素位置。</p>
+<ol>
+<li>现在已经很少用作位移，常用作 absolute 父元素。</li>
+<li>配合 z-index：默认值 auto，不创建新层叠上下文，还可取正负数。</li>
+</ol>
+</li>
+<li>
+<p>absolute：绝对定位，相对于祖先元素中最近的一个定位元素定位的，定位基准是祖先非 static 的定位元素。</p>
+<ol>
+<li>脱离原来位置，另起一层，如对话框关闭按钮或鼠标提示。</li>
+<li>配合 z-index。</li>
+<li>和 relative 父元素配合使用。</li>
+</ol>
+</li>
+</ul>
+<p>Notes：</p>
+<pre><code>  1.white-space:nowrap;文字内容不准换行。
+  2.善用left：100%。
+  3.善用left：50%；加负margin。
+  4.有些浏览器不写top/left会位置错乱。
+</code></pre>
+<ul>
+<li>
+<p>fixed：固定定位，定位基准是 viewport，手机上尽量不要用这个属性（坑）。</p>
+<ol>
+<li>
+<p>用于烦人的广告或者回到顶部按钮。</p>
+</li>
+<li>
+<p>配合 z-index。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>sticky：沾滞定位，适合导航，目前兼容性很差。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/>http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/css%E5%9F%BA%E7%A1%80/" class="prev" rel="prev" title="CSS基础"><i class="iconfont icon-left"></i>&nbsp;CSS基础</a>
+         
+        
+        <a href="http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="next" rel="next" title="CSS知识总结">CSS知识总结&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

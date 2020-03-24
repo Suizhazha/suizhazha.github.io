@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/" />
+  <link rel="next" href="http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/" />
+  <link rel="canonical" href="http://suixin.monster/css%E5%9F%BA%E7%A1%80/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           CSS基础 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="CSS基础 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "CSS基础",
+    "headline" : "CSS基础",
+    "description" : "今天在谷里学习了 css 基础知识，结合维基百科和 mdn，写下此博客跟大家分享，如有错误之处，欢迎指正（没有奖励 😝）。 目录：  css 历史 体系化学习 文档流 盒模型   css 历史 css：中文为层叠样式表（又称串样式列表、级联样式表、串接样式表、阶层式样式表）是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，由 W3C 定义和维护。当前使用最广泛的版本是 CSS2.1，为 W3C 的推荐标准。CSS3 现在已被大部分现代浏览器支持，而下一版的 CSS4 仍在开发中。1994 年，哈肯·维姆·莱提出了 CSS 的最初建议。\n层叠:\n 样式层叠：可以多次对同一选择器进行样式声明。 选择器层叠：可以用不同选择器对同一个元素进行样式声明。 文件层叠：可以用多个文件进行层叠。  note：这些特性使得 css 极度灵活，也为 css 被吐槽留下了隐患。\n目前 CSS2.1 为使用最广泛的版本（IE 支持），CSS3 为最新版本（IE8 部分支持）。 使用 caniuse.com 检查各种浏览器支持哪些特性。\n 体系化学习 怎样学习一门语言：   语法（怎样写代码）\n  语法 1：样式语法\n 选择器{ 属性名:属性值; \/*注释*\/ }  Notes：\n 所有符号都是英文符号。 区分大小写。 没有\/\/注释 最后一个分号可省略，但建议不要省略。 任何一个地方写错了，都不会报错，浏览器会忽略。 若想知道写错，    语法 2:@语法",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-06 16:40:06 \x2b0800 CST",
+    "dateModified" : "2020-01-06 16:40:06 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/css%E5%9F%BA%E7%A1%80\/",
+    "wordCount" : "242",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">CSS基础</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-06 itemprop="datePublished">January 6, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="今天在谷里学习了-css-基础知识结合维基百科和-mdn写下此博客跟大家分享如有错误之处欢迎指正没有奖励-">今天在谷里学习了 css 基础知识，结合维基百科和 mdn，写下此博客跟大家分享，如有错误之处，欢迎指正（没有奖励 😝）。</h2>
+<h2 id="目录">目录：</h2>
+<ul>
+<li>css 历史</li>
+<li>体系化学习</li>
+<li>文档流</li>
+<li>盒模型</li>
+</ul>
+<hr>
+<h3 id="css-历史">css 历史</h3>
+<p>css：中文为层叠样式表（又称串样式列表、级联样式表、串接样式表、阶层式样式表）是一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言，由 W3C 定义和维护。当前使用最广泛的版本是 CSS2.1，为 W3C 的推荐标准。CSS3 现在已被大部分现代浏览器支持，而下一版的 CSS4 仍在开发中。1994 年，哈肯·维姆·莱提出了 CSS 的最初建议。</p>
+<p>层叠:</p>
+<ul>
+<li>样式层叠：可以多次对同一选择器进行样式声明。</li>
+<li>选择器层叠：可以用不同选择器对同一个元素进行样式声明。</li>
+<li>文件层叠：可以用多个文件进行层叠。</li>
+</ul>
+<p>note：这些特性使得 css 极度灵活，也为 css 被吐槽留下了隐患。</p>
+<h3 id="目前-css21-为使用最广泛的版本ie-支持css3-为最新版本ie8-部分支持">目前 CSS2.1 为使用最广泛的版本（IE 支持），CSS3 为最新版本（IE8 部分支持）。</h3>
+<p>使用 caniuse.com 检查各种浏览器支持哪些特性。</p>
+<hr>
+<h3 id="体系化学习">体系化学习</h3>
+<h4 id="怎样学习一门语言">怎样学习一门语言：</h4>
+<ul>
+<li>
+<p>语法（怎样写代码）</p>
+<ul>
+<li>
+<p>语法 1：样式语法</p>
+<pre><code>  选择器{
+    属性名:属性值;
+    /*注释*/
+   }
+</code></pre>
+<p>Notes：</p>
+<ol>
+<li>所有符号都是英文符号。</li>
+<li>区分大小写。</li>
+<li>没有//注释</li>
+<li>最后一个分号可省略，但建议不要省略。</li>
+<li>任何一个地方写错了，都不会报错，浏览器会忽略。</li>
+<li>若想知道写错，</li>
+</ol>
+</li>
+<li>
+<p>语法 2:@语法</p>
+<pre><code>   @charset &quot;UTF-8&quot;;
+   @import url(css路径);
+   @media (min-width: 100px)and (max-width:200px){
+      语法1
+      }
+</code></pre>
+<p>Notes:</p>
+<ol>
+<li>@charset 必须放在第一行。</li>
+<li>前两个@语法都必须以;结尾。</li>
+<li>@media 语法以后在讲。</li>
+<li>charset 是字符集的意思，但 UTF-8 是字符编码 encoding，为历史遗留问题。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>调试（查找代码错误）</p>
+<ol>
+<li>
+<p><a href="https://jigsaw.w3.org/css-validator/">https://jigsaw.w3.org/css-validator/</a>将代码粘贴上去即可，不推荐</p>
+</li>
+<li>
+<p>vscode 颜色报错，位置不大准。</p>
+</li>
+<li>
+<p>WebStorm 看颜色，位置准确。</p>
+</li>
+<li>
+<p>Chrome 开发者工具看警告。</p>
+<pre><code>1. 找到标签
+2. 是否有选择器
+3. 样式是否被划掉
+4. 样式是否被警告
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>
+<p>Border 调试法：</p>
+<pre><code>1. 找到怀疑元素
+2. 给该元素加一个border
+3. 若border没生效，说明选择器错了或语法错了
+4. 若border生效了，看看边界是否符合预期
+5. bug解决了删除border
+</code></pre>
+<p>note：</p>
+<p>CSS 的 border 调试法相当于 JS 的 log 调试法。</p>
+</li>
+</ol>
+<ul>
+<li>查资料
+<ol>
+<li>mdn</li>
+<li>css tricks</li>
+<li>张鑫旭博客</li>
+</ol>
+</li>
+<li>标准制定者 w3c
+<ol>
+<li>all css specifications</li>
+<li>css2.1 中文版</li>
+</ol>
+</li>
+</ul>
+<h4 id="如何学">如何学</h4>
+<ul>
+<li>抄文档，抄老师</li>
+<li>在自己电脑上运行</li>
+<li>加入自己的想法，重新运行并调试。</li>
+</ul>
+<hr>
+<h3 id="文档流">文档流</h3>
+<ul>
+<li>
+<p>流动方向</p>
+<ul>
+<li>inline 元素从左到右，到达最右边才会换行，字节会断开。</li>
+<li>block 元素从上到下，每一个都另起一行。</li>
+<li>inline-block 元素也是从左到右，字节不会断开。</li>
+</ul>
+</li>
+<li>
+<p>宽度</p>
+<ul>
+<li>inline 元素默认宽度为内部 inline 元素的和，inline 元素内不能存在 block 元素，不能用 width 指定，白写。</li>
+<li>block 元素默认自动计算宽度，不是也不能写 width:100%;，会出 bug，一般 width 用 px 或者 em 指定。</li>
+<li>inline-block 元素结合两者特点，宽度默认跟 inline 元素一样，但可用 width 指定。</li>
+</ul>
+</li>
+<li>
+<p>高度</p>
+<ul>
+<li>inline 元素高度由 line-height 间接决定，与 height，padding 无关。</li>
+<li>block 元素高度由内部文档流元素决定，
+可以设置 height。</li>
+<li>inline-block 元素跟 block 元素基本类似，可以设置 height。</li>
+</ul>
+</li>
+<li>
+<p>overflow
+overflow 还可设置 overflow-x 和 overflow-y。</p>
+<ul>
+<li>visibl：默认值。内容不会被剪裁，可以呈现在元素框之外。</li>
+<li>hidden：内容将被剪裁以适合填充框。 不提供滚动条。</li>
+<li>scroll：内容将被剪裁以适合填充框。 浏览器显示滚动条，无论是否实际剪切了任何内容。（这可以防止滚动条在内容更改时出现或消失。）打印机仍可能打印溢出的内容。</li>
+<li>auto：如果内容适合填充框内部，则看起来与可见内容相同。如果内容溢出，桌面浏览器会提供滚动条。</li>
+</ul>
+</li>
+<li>
+<p>脱离文档流</p>
+<pre><code>![](https://user-gold-cdn.xitu.io/2020/1/7/16f7ed138d0d84fe?w=540&amp;h=307&amp;f=png&amp;s=49695)
+</code></pre>
+<p>或</p>
+<pre><code>![](https://user-gold-cdn.xitu.io/2020/1/7/16f7ed38d08b9283?w=533&amp;h=349&amp;f=png&amp;s=52145)
+</code></pre>
+<p>效果为：
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f7ed1f8ecf0104?w=272&amp;h=80&amp;f=png&amp;s=5398" alt=""></p>
+</li>
+</ul>
+<hr>
+<h3 id="盒模型">盒模型</h3>
+<p>CSS 盒模型有两种，一种是 content-box（内容盒） 一种是 border-box（边框盒）。</p>
+<p>content-box 的宽度 width 表示内容区宽度，不包含 padding 和 border；
+而 border-box 的宽度 width 表示内容区 + padding + border 的总和。
+一般优先使用后者（border-box）。</p>
+<p>即下图：
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f7ee12704336c8?w=793&amp;h=396&amp;f=png&amp;s=80174" alt=""></p>
+<h3 id="margin-合并">margin 合并：</h3>
+<ul>
+<li>
+<p>两个孩子之间的上下 margin 会合并：
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f7eed63dee59b9?w=812&amp;h=354&amp;f=png&amp;s=70930" alt="">
+css 要求 margin 不用分两个单独写，直接合并就好。
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f7eef242913a14?w=811&amp;h=446&amp;f=png&amp;s=69168" alt=""></p>
+</li>
+<li>
+<p>第一个孩子和最后一个孩子的上下 margin，可以和他们的父母合并：
+<img src="https://user-gold-cdn.xitu.io/2020/1/7/16f7fcb7e48d3d64?w=1127&amp;h=588&amp;f=png&amp;s=132611" alt=""></p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/css%E5%9F%BA%E7%A1%80/>http://suixin.monster/css%E5%9F%BA%E7%A1%80/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/html%E9%87%8D%E7%82%B9%E6%A0%87%E7%AD%BE/" class="prev" rel="prev" title="HTML重点标签"><i class="iconfont icon-left"></i>&nbsp;HTML重点标签</a>
+         
+        
+        <a href="http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/" class="next" rel="next" title="CSS布局和定位">CSS布局和定位&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

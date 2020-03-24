@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/" />
+  <link rel="next" href="http://suixin.monster/%E6%B5%85%E6%9E%90url/" />
+  <link rel="canonical" href="http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           CSS知识总结 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="CSS知识总结 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "CSS知识总结",
+    "headline" : "CSS知识总结",
+    "description" : "浏览器渲染过程：   根据 HTML 构建 HTML 树（DOM）\n 文档对象模型(DOM)是 HTML 和 XML 文档的编程接口，它会将 web 页面和脚本或程序语言连接起来。    根据 CSS 构建 CSS 树（CSSOM）\n CSS 对象模型 (CSS Object Model, CSSOM) 是一个存放所有 CSS 选择器与相关特性的树状结构容器，拥有根节点、邻居节点、后代节点、子代节点以及其他关系。 CSSCOM 非常类似于 DOM 文件对象模型 。    将两棵树合并成一颗渲染树（render tree）\n  Layout 布局（文档流，盒模型，计算大小和位置）\n  Paint 绘制（将边框颜色，文字颜色，阴影等画出来）\n  Compose 合成（根据层叠关系展示画面）\n  如何更新样式： 一般用 JS 更新样式：\n div.style.background=\x27red\x26rsquo; div.style.display=\x27none\x26rsquo; div.classList.add(\x26lsquo;red\x26rsquo;)（加样式不如加类）  三种渲染方式和更新方式：  JS\/CSS\x26gt;样式\x26gt;布局\x26gt;绘制\x26gt;合成   例如div.",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-13 22:01:29 \x2b0800 CST",
+    "dateModified" : "2020-01-13 22:01:29 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93\/",
+    "wordCount" : "262",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">CSS知识总结</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-13 itemprop="datePublished">January 13, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="浏览器渲染过程">浏览器渲染过程：</h3>
+<ol>
+<li>
+<p>根据 HTML 构建 HTML 树（DOM）</p>
+<ul>
+<li>文档对象模型(DOM)是 HTML 和 XML 文档的编程接口，它会将 web 页面和脚本或程序语言连接起来。</li>
+</ul>
+</li>
+<li>
+<p>根据 CSS 构建 CSS 树（CSSOM）</p>
+<ul>
+<li>CSS 对象模型 (CSS Object Model, CSSOM) 是一个存放所有 CSS 选择器与相关特性的树状结构容器，拥有根节点、邻居节点、后代节点、子代节点以及其他关系。 CSSCOM 非常类似于 DOM 文件对象模型 。</li>
+</ul>
+</li>
+<li>
+<p>将两棵树合并成一颗渲染树（render tree）</p>
+</li>
+<li>
+<p>Layout 布局（文档流，盒模型，计算大小和位置）</p>
+</li>
+<li>
+<p>Paint 绘制（将边框颜色，文字颜色，阴影等画出来）</p>
+</li>
+<li>
+<p>Compose 合成（根据层叠关系展示画面）</p>
+</li>
+</ol>
+<h3 id="如何更新样式">如何更新样式：</h3>
+<p>一般用 JS 更新样式：</p>
+<ul>
+<li>div.style.background='red&rsquo;</li>
+<li>div.style.display='none&rsquo;</li>
+<li>div.classList.add(&lsquo;red&rsquo;)（加样式不如加类）</li>
+</ul>
+<h3 id="三种渲染方式和更新方式">三种渲染方式和更新方式：</h3>
+<ol>
+<li>JS/CSS&gt;样式&gt;布局&gt;绘制&gt;合成</li>
+</ol>
+<ul>
+<li>例如<code>div.remove()</code>会触发当前消失，其他元素 relayout。</li>
+</ul>
+<ol start="2">
+<li>JS/CSS&gt;样式&gt;绘制&gt;合成</li>
+</ol>
+<ul>
+<li>例如改变背景颜色，则直接 repaint+composite。</li>
+</ul>
+<ol start="3">
+<li>JS/CSS&gt;样式&gt;合成</li>
+</ol>
+<ul>
+<li>改变 transform，只需 composite</li>
+</ul>
+<p>Notes：</p>
+<ul>
+<li>必须全屏查看效果，在 iframe 里看问题。</li>
+<li>csstriggers.com 可查看每种属性触发哪些流程。</li>
+</ul>
+<hr>
+<h3 id="css-动画优化">CSS 动画优化</h3>
+<p>详细可查看<!-- raw HTML omitted -->google 团队文章<!-- raw HTML omitted --></p>
+<ul>
+<li>JS 优化：使用 requestAnimationFrame 代替 setTimeout 或 setInterval</li>
+<li>CSS 优化：使用 will-change 或 translate</li>
+</ul>
+<h3 id="transform-属性">transform 属性</h3>
+<ol>
+<li>四个常用功能</li>
+</ol>
+<ul>
+<li>
+<p>位移 transsform</p>
+<p><code>transsform:translate(50px);</code>X 轴位移 50 像素。</p>
+<p>Notes：</p>
+<ul>
+<li>若要在 Z 轴（垂直于视点）位移，需要在父元素上添加 perspective 属性。</li>
+<li><code>transsform:translate(-50%，-50%);</code>可做绝对定位元素的居中。</li>
+<li>MDN 语法格式很重要！！！</li>
+</ul>
+</li>
+<li>
+<p>缩放 scale：</p>
+<p><code>transsform:scale(1.5)；</code>
+。用的很少，因为变形，容易出现模糊。</p>
+</li>
+<li>
+<p>旋转 rotate：</p>
+</li>
+</ul>
+<p><code>transsform:rotate(45deg)；</code>顺时针旋转 45 度。一般用于 360 度旋转制作 loading，或者按钮的交互（鼠标移到按钮上就转一圈），多看 MDN 文档。</p>
+<ul>
+<li>倾斜 skew：</li>
+</ul>
+<p><code>transsform:skewX(15deg)；</code>X 轴倾斜 15 度。用得较少，用时搜 MDN 文档。</p>
+<hr>
+<h3 id="transition">transition</h3>
+<ul>
+<li>
+<p>作用：补全中间帧。</p>
+<p>例如：
+<img src="https://user-gold-cdn.xitu.io/2020/1/13/16f9ee7518795180?w=781&amp;h=397&amp;f=png&amp;s=53303" alt=""><!-- raw HTML omitted -->效果<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>语法：</p>
+<ul>
+<li>
+<p>transition：属性名 时长 过渡时间 延迟；</p>
+<p><code>transition：right 10s linear；</code></p>
+</li>
+<li>
+<p>可用逗号分隔开两个不同属性</p>
+<p><code>transition：right 10s,top 10s；</code></p>
+</li>
+<li>
+<p>可用 all 代表所有属性</p>
+<p><code>transition：all 10s linear；</code></p>
+</li>
+<li>
+<p>过渡方式：linear，ease，ease-in，ease-out，
+ease-in-out，cubic-bezier，step- start，step-end，steps。
+具体效果查看<!-- raw HTML omitted -->MDN<!-- raw HTML omitted --></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Notes：并非所有属性都使用 transition。</p>
+<ul>
+<li>display:block;=&gt;display:none;不能过渡，而修改成透明度 opacity，也只是看不见了，位置还一直占着。
+一般改成 visibility:visible=&gt;hidden，visibility 也是占位置的。</li>
+<li>background 背景颜色可以过渡。</li>
+<li>opacity 透明度可以过渡，但不推荐。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>过渡必须有起始，一般只有一次或两次动画，比如 hover 和非 hover 状态的过渡。</p>
+<p>若有中间过渡，可以使用两次 transform，用 setTimeout 或者监听 transitionend 事件确认中间点。</p>
+<p>也可以使用 animation（声明关键帧，添加动画）来实现。</p>
+<h3 id="animation">animation</h3>
+<ul>
+<li>keyframes 语法：
+一种是 from to:</li>
+</ul>
+<pre><code>@keyframes slidein {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+</code></pre><p>或者百分数</p>
+<pre><code>@keyframes identifier {
+  0% { top: 0; left: 0; }
+  30% { top: 50px; }
+  68%, 72% { left: 50px; }
+  100% { top: 100px; left: 100%; }
+}
+</code></pre><ul>
+<li>
+<p>语法：animation:时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名；</p>
+<ul>
+<li>时长：1s 或者 1000ms</li>
+<li>过渡方式：跟 transition 取值一样，如 linear</li>
+<li>次数：数字 或着 infinite（无限次）</li>
+<li>方向： - normal：每个循环内动画向前循环，换言之，每个动画循环结束，动画重置到起点重新开始，这是默认属性。 - reverse：反向运行动画，每周期结束动画由尾到头运行。 - alternate：动画交替反向运行，反向运行时，动画按步后退，同时，带时间功能的函数也反向，比如，ease-in 在反向时成为 ease-out。 - alternate-reverse：反向交替，反向开始交替
+动画第一次运行时是反向的，然后下一次是正向，后面依次循环。</li>
+<li>填充模式：
+<ul>
+<li>none：这是默认值，由该元素的 CSS 规则来显示该元素。</li>
+<li>forwards：动画将停留在最后一个关键帧。</li>
+<li>backwards：动画将在应用于目标时立即应用第一个关键帧中定义的值，并在 animation-delay 期间保留此值。第一个关键帧取决于 animation-direction 的值。</li>
+<li>both：动画将遵循 forwards 和 backwards 的规则，从而在两个方向上扩展动画属性。</li>
+</ul>
+</li>
+<li>是否暂停：
+<ul>
+<li>paused：当前动画已被停止。</li>
+<li>running：当前动画正在运行。</li>
+</ul>
+</li>
+</ul>
+<p>note：以上所有属性都有对应的单独属性。只改一个属性的话就要单独写。</p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/>http://suixin.monster/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/css%E5%B8%83%E5%B1%80%E5%92%8C%E5%AE%9A%E4%BD%8D/" class="prev" rel="prev" title="CSS布局和定位"><i class="iconfont icon-left"></i>&nbsp;CSS布局和定位</a>
+         
+        
+        <a href="http://suixin.monster/%E6%B5%85%E6%9E%90url/" class="next" rel="next" title="浅析URL">浅析URL&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

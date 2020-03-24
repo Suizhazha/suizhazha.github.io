@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="隋鑫">
+  <meta name="description" content="隋鑫的个人网站">
+  <meta name="keywords" content="隋鑫,前端工程师,2020届本科毕业生">
+  
+  <link rel="prev" href="http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" />
+  <link rel="next" href="http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/" />
+  <link rel="canonical" href="http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           HTML入门笔记 | 隋鑫的个人网站
+       
+  </title>
+  <meta name="title" content="HTML入门笔记 | 隋鑫的个人网站">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/suixin.monster\/"
+    },
+    "articleSection" : "posts",
+    "name" : "HTML入门笔记",
+    "headline" : "HTML入门笔记",
+    "description" : "大家好，上星期在饥人谷学习了 HTML 的历史概述，语法和一些常用标签。前几天因为收拾东西回家，此笔记一直没有写完。今天整理完成后分享给大家，如有错误之处，欢迎指正！（没有奖励 😝）  首先是关于 HTML 的历史: HTML（英文：HyperText Markup Language，中文：超文本标记语言）由英国计算机科学家 Timothy John Berners-Lee 创立，同时他也是万维网的发明者。而万维网（WWW）包括了 URL，HTML 以及 HTTP，本篇只简单介绍下 HTML。\n HTML 起手式 !\x2btab键即可出现下图代码；  其中\x26lt;!DOCTYPE html\x26gt; 为文档类型\n\x26lt;html lang=\x26quot;en\x26quot;\x26gt; html 标签，可改 zh-cn\n而 head 标签内为看不到的元素。\n\x26lt;meta charset=\x26quot;UTF-8\x26quot; \/\x26gt; 字符编码\n\x26lt;meta name=\x26quot;viewport\x26quot; content=\x26quot;width=device-width, initial-scale=1.0\x26quot; \/\x26gt; 为防止页面缩放，用于兼容手机。\n\x26lt;meta http-equiv=\x26quot;X-UA-Compatible\x26quot; content=\x26quot;ie=edge\x26quot; \/\x26gt; 可要求 Ie 升级到最新内核（11）\n\x26lt;title\x26gt;Document\x26lt;\/title\x26gt; 为标题\n 章节标签  标题 h1~h6 章节 section 文章 article 段落 p 头部 header 脚部 footer 主要 main 旁支 aside 划分 div   全局属性   class：类(class 找元素非常不方便)，推荐：   contenteditable，可以让所有元素可编辑。\x26lt;div class=\x26quot;middle bordered\x26quot; contenteditable\x26gt;",
+    "inLanguage" : "zh-CN",
+    "author" : "隋鑫",
+    "creator" : "隋鑫",
+    "publisher": "隋鑫",
+    "accountablePerson" : "隋鑫",
+    "copyrightHolder" : "隋鑫",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-01 21:59:13 \x2b0800 CST",
+    "dateModified" : "2020-01-01 21:59:13 \x2b0800 CST",
+    "url" : "http:\/\/suixin.monster\/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0\/",
+    "wordCount" : "157",
+    "keywords" : [  "隋鑫的个人网站"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://suixin.monster/">隋鑫的个人网站</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/" title="">首页</a>
+                
+                <a class="menu-item" href="/posts/" title="">文章</a>
+                
+                <a class="menu-item" href="https://juejin.im/user/5c21e27ee51d452f2c2ef72c" title="">掘金</a>
+                
+                <a class="menu-item" href="/index.xml" title="">RSS</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">HTML入门笔记</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://suixin.monster/" rel="author">隋鑫</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-01 itemprop="datePublished">January 1, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="大家好上星期在饥人谷学习了-html-的历史概述语法和一些常用标签前几天因为收拾东西回家此笔记一直没有写完今天整理完成后分享给大家如有错误之处欢迎指正没有奖励-">大家好，上星期在饥人谷学习了 HTML 的历史概述，语法和一些常用标签。前几天因为收拾东西回家，此笔记一直没有写完。今天整理完成后分享给大家，如有错误之处，欢迎指正！（没有奖励 😝）</h2>
+<hr>
+<h3 id="首先是关于-html-的历史">首先是关于 HTML 的历史:</h3>
+<p>HTML（英文：HyperText Markup Language，中文：超文本标记语言）由英国计算机科学家 Timothy John Berners-Lee 创立，同时他也是万维网的发明者。而万维网（WWW）包括了 URL，HTML 以及 HTTP，本篇只简单介绍下 HTML。</p>
+<hr>
+<h3 id="html-起手式">HTML 起手式</h3>
+<pre><code>!+tab键即可出现下图代码；
+</code></pre>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6b8a34d79cf43?w=509&amp;h=252&amp;f=png&amp;s=33005" alt="">
+其中<code>&lt;!DOCTYPE html&gt;</code>
+为文档类型</p>
+<p><code>&lt;html lang=&quot;en&quot;&gt;</code>
+html 标签，可改 zh-cn</p>
+<p>而 head 标签内为看不到的元素。</p>
+<p><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;</code>
+字符编码</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</code>
+为防止页面缩放，用于兼容手机。</p>
+<p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;</code>
+可要求 Ie 升级到最新内核（11）</p>
+<p><code>&lt;title&gt;Document&lt;/title&gt;</code>
+为标题</p>
+<hr>
+<h3 id="章节标签">章节标签</h3>
+<ul>
+<li>标题 h1~h6</li>
+<li>章节 section</li>
+<li>文章 article</li>
+<li>段落 p</li>
+<li>头部 header</li>
+<li>脚部 footer</li>
+<li>主要 main</li>
+<li>旁支 aside</li>
+<li>划分 div</li>
+</ul>
+<hr>
+<h3 id="全局属性">全局属性</h3>
+<ul>
+<li>
+<p>class：类(class 找元素非常不方便)，推荐：
+<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6b9e46c1ea677?w=678&amp;h=484&amp;f=png&amp;s=61754" alt=""></p>
+</li>
+<li>
+<p>contenteditable，可以让所有元素可编辑。<code>&lt;div class=&quot;middle bordered&quot; contenteditable&gt;</code></p>
+<p>note:
+要想使 style 标签可见：放置 body 内，加<code>style{display:block;}</code>
+配合 contenteditable 可被编辑样式,这是个调试技巧，可以先显示再编辑。</p>
+</li>
+<li>
+<p>hidden：隐藏，比<code>display：block</code>优先级高</p>
+</li>
+<li>
+<p>id：不到万不得已，不用要 id，因为不会报错。（唯一性会误导别人）
+简写为#xxx，js 可直接调用 id 元素，有些忌讳，新手不要用。</p>
+</li>
+<li>
+<p>style：html 的属性，不是 css 的样式，还可通过 js 设置，js 会覆盖 html 的 style（js 优先级最高，html&gt;css）。</p>
+</li>
+<li>
+<p>tabindex：控制 tab 的顺序。（0 是最后访问，-1 是别访问）
+<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba06008daa35?w=1032&amp;h=102&amp;f=png&amp;s=33221" alt=""></p>
+</li>
+<li>
+<p>title：可在开发者模式，有代码提示。
+例：标题文字太多，想省略号隐藏。</p>
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba0a5c66797b?w=594&amp;h=282&amp;f=png&amp;s=49546" alt="">效果为：
+<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba101808df6b?w=726&amp;h=90&amp;f=png&amp;s=8817" alt=""></p>
+<p>若要显示完整内容：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba13b53b9899?w=736&amp;h=174&amp;f=png&amp;s=43838" alt=""></p>
+<hr>
+<h3 id="默认样式因为-css-还没出生">默认样式（因为 css 还没出生）</h3>
+<p>查看：开发者工具，element-&gt;style-&gt;user agent stylesheet</p>
+<h4 id="css-reset清除默认样式加自己的样式">css reset(清除默认样式，加自己的样式)</h4>
+<p>方方老师常用 reset<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba7cb8b2de8c?w=618&amp;h=188&amp;f=png&amp;s=63122" alt="">
+也可借鉴大厂源码：
+开发者工具内找 h1h2h3h4…，连击 3 下复制，table 后删除。</p>
+<p>推荐加上如下图所示代码不加会非常丑<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6ba41439aa9dd?w=292&amp;h=155&amp;f=png&amp;s=15201" alt="">
+输入 table+tab 键可快速打出下图代码：
+<img src="https://user-gold-cdn.xitu.io/2020/1/3/16f6bb9db09ceb82?w=205&amp;h=95&amp;f=png&amp;s=6087" alt=""></p>
+<hr>
+<h3 id="内容标签">内容标签：</h3>
+<ul>
+<li>ol：有顺序的列表，内只有 li（list item）</li>
+<li>ul：无顺序的列表，dl+tab 可生成所有结构</li>
+<li>dl：描述列表
+<ul>
+<li>dt：描述对象</li>
+<li>dd：描述数据内容</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>pre：保留所有空格，回车，tab（因为 tab，回车和多个空格会缩成一个空格）</p>
+</li>
+<li>
+<p>code:默认字体等宽，
+pre 配合 code 使用，效果更佳。</p>
+</li>
+<li>
+<p>hr：分割线</p>
+</li>
+<li>
+<p>br：换行</p>
+</li>
+<li>
+<p>a：超链接</p>
+<ul>
+<li>href：网址链接</li>
+<li>target：新窗口打开（国内常用）</li>
+</ul>
+</li>
+<li>
+<p>em：强调内容语气，默认斜体</p>
+</li>
+<li>
+<p>strong：强调内容本身，默认加粗</p>
+</li>
+<li>
+<p>quote：内联引用</p>
+</li>
+<li>
+<p>blockquote：块引用</p>
+</li>
+</ul>
+<hr>
+<h2 id="第一次使用博客记录下学习笔记感觉很乱标签介绍也很简单以后会边学习边仔细整理">第一次使用博客记录下学习笔记，感觉很乱，标签介绍也很简单，以后会边学习边仔细整理。</h2>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>隋鑫 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/>http://suixin.monster/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://suixin.monster/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" class="prev" rel="prev" title="开博大吉"><i class="iconfont icon-left"></i>&nbsp;开博大吉</a>
+         
+        
+        <a href="http://suixin.monster/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2mac%E7%89%88/" class="next" rel="next" title="使用hugo搭建个人博客mac版">使用hugo搭建个人博客mac版&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://suixin.monster/">隋鑫</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
