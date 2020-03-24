@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 隋鑫的博客</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on 隋鑫的博客</description>
+    <title>Posts on 隋鑫的个人网站</title>
+    <link>http://suixin.monster/posts/</link>
+    <description>Recent content in Posts on 隋鑫的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-Hans</language>
-    <lastBuildDate>Fri, 13 Dec 2019 17:59:01 +0800</lastBuildDate>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 23 Mar 2020 19:30:02 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://suixin.monster/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>开博大吉</title>
+      <link>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
+      <pubDate>Mon, 23 Mar 2020 19:30:02 +0800</pubDate>
+      
+      <guid>http://suixin.monster/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
+      <description>隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ </description>
+    </item>
+    
+    <item>
       <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
+      <link>http://suixin.monster/my-first-post/</link>
       <pubDate>Fri, 13 Dec 2019 17:59:01 +0800</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
+      <guid>http://suixin.monster/my-first-post/</guid>
       <description>隋鑫的博客开通了！！！ 欢迎来到我的博客，我会在这给大家分享一些自己学习编程的体会和感悟的！ </description>
     </item>
     
